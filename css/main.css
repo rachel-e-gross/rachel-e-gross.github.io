@@ -1304,7 +1304,7 @@ header .logo a {
   	height: 100%;
   	min-height: 460px;
   	display: table;
-	background-position: center 20%; 
+	background-position: center 38%; 
   	position: relative;
   	text-align: center;
 
@@ -1325,9 +1325,9 @@ header .logo a {
 	display: table-cell;
 	vertical-align: left;
 	text-align: middle;
-	-webkit-transform: translateY(-3rem);
-	-ms-transform: translateY(-3rem);
-	transform: translateY(-3rem); /* -2.1rem*/
+	-webkit-transform: translateY(-2.1rem);
+	-ms-transform: translateY(-2.1rem);
+	transform: translateY(-2.1em); /* -2.1rem*/
 }
 .intro-content h1 {
 	color: #FFFFFF;
@@ -2614,6 +2614,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
