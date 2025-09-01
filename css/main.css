@@ -1310,7 +1310,7 @@ header .logo a {
   position: relative;                /* keep: overlay positions against this */
   text-align: left;
   box-sizing: border-box;
-  padding-bottom: 90px;              /* room for the icon row at the bottom */
+  padding-bottom: 30px;              /* room for the icon row at the bottom */
 }
 
 /* overlay — your code had `position: transparent` (invalid). */
@@ -1326,7 +1326,7 @@ header .logo a {
 #intro .intro-content {
   text-align: left;                      /* was center */
   padding-left: 48px;                    /* how far from the left edge */
-  padding-top: 50px;                     /* smaller number = higher */
+  padding-top: 60px;                     /* smaller number = higher */
 }
 .intro-content h1 {
 	color: #FFFFFF;
@@ -2613,6 +2613,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
