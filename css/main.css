@@ -1496,42 +1496,39 @@ header .logo a {
  */
 #about {
 	background: #FFFFFF;
-	padding-top: 12rem;
-	padding-bottom: 15rem;
+	padding-top: 7rem;
+	padding-bottom: 5rem;
 }
 #about .section-intro {
 	margin-bottom: 3rem;
 }
 
 .intro-info {
-	margin-top: 4.2rem;
-	margin-right: -30px;
-	margin-left: -30px;
+	/* margin-top: 4.2rem; 
+	margin-right: -400px;
+	margin-left: -400px; */
+	margin-top: 0.5%; 
+	margin-right: -35%;
+	margin-left: -35%;
+
 }
 
 
-/*
+
 .intro-info img {
-	height: 9rem;
-	width: 9rem;
+	height: 35rem;
+	width: 35rem;
 	border-radius: 50%;
-	margin: .9rem 0 0 0;
-	float: left;
-}*/
-
-.intro-info img {
-  height: auto;
-  width: auto;
-  border-radius: 50%;
-  margin: 0 auto;
-  display: block;
+	/* margin: 2rem 2rem 0 0; */
+	margin: 1% auto;
+	float: center;
 }
-
-
-
 .intro-info .lead {
-	text-align: left;
-	padding-left: 13rem;
+	text-align: center;
+	padding-left: 0rem;
+	font-size: 2rem;
+	/* margin: 0.5%; */
+
 }
 
 .about-content {
@@ -2617,6 +2614,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
