@@ -1294,7 +1294,7 @@ header .logo a {
  * ------------------------------------------------------------------- 
  */
 #intro {
-	background: #151515 url(../images/keck_sunset.jpeg) no-repeat center bottom;
+	background: #151515 url(../images/keck_sunset.jpeg) no-repeat center center;
 	
 	background-size: cover;        /* fills space, crops edges */
   	background-attachment: scroll; /* or fixed if you like parallax */
@@ -2612,6 +2612,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
