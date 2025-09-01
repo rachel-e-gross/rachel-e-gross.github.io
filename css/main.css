@@ -1303,8 +1303,8 @@ header .logo a {
   background-size: cover;            /* fill screen */
   background-attachment: scroll;
   width: 100%;
-  height: auto;
-  min-height: 90vh;
+  min-height: 640px;
+  
   display: table;
   position: relative;                /* keep: overlay positions against this */
   text-align: left;
@@ -2612,6 +2612,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
