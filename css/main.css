@@ -1324,9 +1324,19 @@ header .logo a {
 
 /* center the text and move it down WITHOUT overlap */
 #intro .intro-content {
-  text-align: left;                      /* was center */
-  padding-left: 48px;                    /* how far from the left edge */
-  padding-top: 90px;                     /* smaller number = higher */
+  text-align: left;
+  padding-left: 48px;
+
+  /* ↓ two lines that actually move it down */
+  vertical-align: bottom !important;                 /* from middle → bottom */
+  padding-bottom: calc(7.2rem + 2rem) !important;    /* icons are at 7.2rem; +gap */
+
+  /* be sure no earlier transform is lifting it */
+  -webkit-transform: none !important;
+  -ms-transform: none !important;
+  transform: none !important;
+
+  padding-top: 0 !important;                         /* padding-top no longer needed */
 }
 .intro-content h1 {
 	color: #FFFFFF;
@@ -2613,6 +2623,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
