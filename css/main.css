@@ -1307,7 +1307,7 @@ header .logo a {
   min-height: 60vh;
   display: table;
   position: relative;                /* keep: overlay positions against this */
-  text-align: center;
+  text-align: left;
   box-sizing: border-box;
   padding-bottom: 90px;              /* room for the icon row at the bottom */
 }
@@ -2612,6 +2612,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
