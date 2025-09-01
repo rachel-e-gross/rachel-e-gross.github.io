@@ -1303,7 +1303,8 @@ header .logo a {
   background-size: cover;            /* fill screen */
   background-attachment: scroll;
   width: 100%;
-  min-height: 640px;
+  height: auto;
+  min-height: 60hv;
   display: table;
   position: relative;                /* keep: overlay positions against this */
   text-align: center;
@@ -1328,7 +1329,7 @@ header .logo a {
   -webkit-transform: none;
   -ms-transform: none;
   transform: none;                   /* stop the upward nudge */
-  padding-top: 70px;                 /* adjust to move the text down */
+  padding-top: 30px;                 /* adjust to move the text down */
 }
 .intro-content h1 {
 	color: #FFFFFF;
@@ -2615,6 +2616,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
