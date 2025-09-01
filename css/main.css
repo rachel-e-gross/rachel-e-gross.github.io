@@ -1299,7 +1299,7 @@ header .logo a {
   background-color: #151515;
   background-image: url(../images/sma_sunset.jpeg);
   background-repeat: no-repeat;
-  background-position: center 38%;   /* tweak 30–45% for more sky/ground */
+  background-position: center 40%;   /* tweak 30–45% for more sky/ground */
   background-size: cover;            /* fill screen */
   background-attachment: scroll;
   width: 100%;
@@ -2612,6 +2612,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
