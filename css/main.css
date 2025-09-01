@@ -1304,7 +1304,7 @@ header .logo a {
   background-attachment: scroll;
   width: 100%;
   height: auto;
-  min-height: 60hv;
+  min-height: 60vh;
   display: table;
   position: relative;                /* keep: overlay positions against this */
   text-align: center;
@@ -1323,13 +1323,9 @@ header .logo a {
 
 /* center the text and move it down WITHOUT overlap */
 #intro .intro-content {
-  display: table-cell;
-  vertical-align: middle;            /* not 'center' */
-  text-align: center;                /* not 'middle' */
-  -webkit-transform: none;
-  -ms-transform: none;
-  transform: none;                   /* stop the upward nudge */
-  padding-top: 30px;                 /* adjust to move the text down */
+  text-align: left;                      /* was center */
+  padding-left: 48px;                    /* how far from the left edge */
+  padding-top: 10px;                     /* smaller number = higher */
 }
 .intro-content h1 {
 	color: #FFFFFF;
@@ -2616,6 +2612,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
