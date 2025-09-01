@@ -1293,6 +1293,8 @@ header .logo a {
  *
  * ------------------------------------------------------------------- 
  */
+
+
 #intro {
 	background: #151515 url(../images/keck_sunset.jpeg) no-repeat center center;
 	
@@ -1304,6 +1306,16 @@ header .logo a {
   	display: table;
   	position: relative;
   	text-align: center;
+
+
+	#intro {
+  background-color: #000 !important;
+  background-image: url(../images/keck_sunset.jpeg) !important;
+  background-repeat: no-repeat !important;
+  background-position: center 40% !important;  /* try 35–45% to frame the domes */
+  background-size: cover !important;           /* fill screen; crop edges */
+  background-attachment: scroll !important;    /* avoid mobile parallax zoom issues */
+}
 	
 }
 .intro-overlay {
@@ -2612,6 +2624,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
