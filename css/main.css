@@ -1305,6 +1305,7 @@ header .logo a {
 	display: table;
 	position: relative;
 	text-align: center;
+	opacity: 0.5;
 }
 .intro-overlay {
 	position: absolute;
@@ -2598,3 +2599,4 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
