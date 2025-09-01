@@ -1302,20 +1302,13 @@ header .logo a {
   	background-attachment: scroll; /* or fixed if you like parallax */
   	width: 100%;
   	height: 100%;
-  	/*min-height: 720px;*/
+  	min-height: 720px;
   	display: table;
+	background-position: center 38%; 
   	position: relative;
   	text-align: center;
 
 
-	#intro {
-  background-color: #000 !important;
-  background-image: url(../images/keck_sunset.jpeg) !important;
-  background-repeat: no-repeat !important;
-  background-position: center 40% !important;  /* try 35–45% to frame the domes */
-  background-size: cover !important;           /* fill screen; crop edges */
-  background-attachment: scroll !important;    /* avoid mobile parallax zoom issues */
-}
 	
 }
 .intro-overlay {
@@ -1527,7 +1520,7 @@ header .logo a {
 }*/
 
 .intro-info img {
-  height: 120px;
+  height: auto;
   width: 120px;
   border-radius: 50%;
   margin: 0 auto;
@@ -2624,6 +2617,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
