@@ -1325,9 +1325,9 @@ header .logo a {
 	display: table-cell;
 	vertical-align: middle;
 	text-align: center;
-	-webkit-transform: translateY(-2.1rem);
-	-ms-transform: translateY(-2.1rem);
-	transform: translateY(-2.1rem);
+	-webkit-transform: translateY(3rem);
+	-ms-transform: translateY(3rem);
+	transform: translateY(3rem); /* -2.1rem*/
 }
 .intro-content h1 {
 	color: #FFFFFF;
@@ -2617,6 +2617,7 @@ footer .copyright span:last-child::after {
 
 
 /*# sourceMappingURL=main.css.map */
+
 
 
 
