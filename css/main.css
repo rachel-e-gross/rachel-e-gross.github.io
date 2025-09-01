@@ -1294,7 +1294,7 @@ header .logo a {
  * ------------------------------------------------------------------- 
  */
 #intro {
-	background: #151515 url(../images/intro-bg.jpg) no-repeat center bottom;
+	background: #151515 url(../images/keck_sunset.jpeg) no-repeat center bottom;
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	background-size: cover;
@@ -2595,5 +2595,6 @@ footer .copyright span:last-child::after {
 #go-top a:hover {
 	background: #000000;
 }
+
 
 /*# sourceMappingURL=main.css.map */
