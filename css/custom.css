@@ -34,3 +34,27 @@
   max-width: 900px;
   margin: 0 auto;
 }
+
+
+/* === Center social icons at bottom === */
+#intro .intro-social {
+  position: absolute;       /* Take icons out of normal flow */
+  bottom: 20px;             /* distance from bottom of screen */
+  left: 50%;                /* move starting point to center */
+  transform: translateX(-50%); /* center them horizontally */
+  display: flex;            /* lay them out nicely */
+  gap: 16px;                /* spacing between icons */
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+#intro .intro-social li a {
+  color: white;             /* or whatever color you want */
+  font-size: 2rem;          /* adjust icon size */
+}
+
+#intro .intro-social li a:hover {
+  color: #00BFFF;           /* hover color */
+}
+
