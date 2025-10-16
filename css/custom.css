@@ -1,8 +1,9 @@
 /* === Custom overrides === */
 #intro {
-  background-image: url(../images/keck_sunset.jpeg);
+  background-image: url(../images/moon_beach.jpeg);
   background-size: cover;
   background-position: center 40%;
+  min-height: 70vh;
 }
 
 /* Hero image: better placement + spacing */
