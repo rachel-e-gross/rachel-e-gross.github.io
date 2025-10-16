@@ -36,27 +36,33 @@
 }
 
 
-/* === Center social icons at bottom === */
+/* === Force hero container to be positioning context === */
+#intro {
+  position: relative;   /* this is crucial */
+}
+
+/* === Center the social icons at the bottom === */
 #intro .intro-social {
-  position: absolute;       /* Take icons out of normal flow */
-  bottom: 20px;             /* distance from bottom of screen */
-  left: 50%;                /* move starting point to center */
-  transform: translateX(-50%); /* center them horizontally */
-  display: flex;            /* lay them out nicely */
-  gap: 16px;                /* spacing between icons */
+  position: absolute;
+  bottom: 20px;               /* distance from the bottom */
+  left: 50%;                  /* center horizontally */
+  transform: translateX(-50%);
+  display: flex;              /* lay icons in a row */
+  gap: 20px;                  /* spacing between them */
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: center;
+  align-items: center;
+  width: auto;                /* don't stretch full width */
 }
 
 #intro .intro-social li a {
-  color: white;             /* or whatever color you want */
-  font-size: 2rem;          /* adjust icon size */
+  color: white;               /* adjust to your background */
+  font-size: 2rem;            /* size of the icons */
+  transition: color 0.2s;
 }
 
 #intro .intro-social li a:hover {
-  color: #00BFFF;           /* hover color */
-}
-#intro {
-  position: relative;
+  color: #00BFFF;             /* hover color */
 }
