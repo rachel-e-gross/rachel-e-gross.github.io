@@ -1,0 +1,30 @@
+/* === Custom overrides === */
+
+/* Hero image: better placement + spacing */
+#intro .intro-content {
+  display: table-cell;
+  vertical-align: bottom;
+  padding: 0 48px 12vh 48px;
+  transform: none !important;
+}
+
+/* Profile photo: make it circular */
+#about .intro-info img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  float: none;
+  margin: 0;
+}
+
+#about .intro-info {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4rem;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
