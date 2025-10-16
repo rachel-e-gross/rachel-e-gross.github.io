@@ -1,4 +1,9 @@
 /* === Custom overrides === */
+#intro {
+  background-image: url(../images/keck_sunset.jpeg);
+  background-size: cover;
+  background-position: center 40%;
+}
 
 /* Hero image: better placement + spacing */
 #intro .intro-content {
