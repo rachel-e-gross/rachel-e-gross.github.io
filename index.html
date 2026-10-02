@@ -41,6 +41,62 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
+    <!-- Temporary homepage and research-card styling.
+         Kept here so only index.html needs updating. -->
+    <style>
+        #intro {
+            background: linear-gradient(125deg, #121b29 0%, #30243e 55%, #173540 100%) !important;
+            background-image: linear-gradient(125deg, #121b29 0%, #30243e 55%, #173540 100%) !important;
+        }
+        #intro .intro-overlay {
+            background: rgba(9, 13, 25, 0.15) !important;
+            opacity: 1;
+        }
+        #intro h1 { text-shadow: 0 2px 14px rgba(0,0,0,0.15); }
+        #intro .intro-position { max-width: 900px; margin-left: auto; margin-right: auto; }
+        #about .about-summary {
+            max-width: 830px;
+            margin: 24px auto 0;
+            text-align: left;
+        }
+        #about .about-summary p { font-size: 1.8rem; line-height: 1.8; }
+        #portfolio .research-tile {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 280px;
+            width: 100%;
+            color: #fff;
+        }
+        #portfolio .research-tile i { font-size: 62px; margin-bottom: 24px; opacity: 0.94; }
+        #portfolio .research-tile span {
+            color: #fff;
+            font-size: 13px;
+            font-weight: 650;
+            letter-spacing: .15em;
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .research-lab { background: linear-gradient(135deg, #5b466b, #251d38); }
+        .research-jwst { background: linear-gradient(135deg, #356373, #172e40); }
+        .research-chem { background: linear-gradient(135deg, #64616f, #2b3446); }
+        .research-rt { background: linear-gradient(135deg, #3c5168, #202837); }
+        .research-modal-banner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 160px;
+            color: white;
+            font-size: 64px;
+        }
+        #portfolio .research-tile, .research-modal-banner { box-sizing: border-box; }
+        @media only screen and (max-width: 600px) {
+            #portfolio .research-tile { min-height: 220px; }
+            #about .about-summary p { font-size: 1.6rem; }
+        }
+    </style>
+
 </head>
 
 
@@ -77,15 +133,6 @@
                             University of Virginia
                         </span>
                     </p>
-
-                     <p>
-                    My research focuses on gas- and ice-phase chemistry in
-                    star- and planet-forming environments. I combine
-                    laboratory astrochemistry, JWST observations, chemical
-                    modeling, and radiative transfer to investigate how
-                    irradiation, temperature, and physical structure shape
-                    molecular abundances and volatile evolution.
-                </p>
 
                     <!-- About Me Button -->
                     <a class="button stroke smoothscroll"
@@ -146,293 +193,218 @@
     <!-- ABOUT SECTION
     ================================================== -->
     <section id="about">
-
         <div class="row section-intro">
-
             <div class="col-twelve">
-
                 <h1>A little about me</h1>
-
                 <div class="intro-info">
-
-                    <img src="images/profile_pic.jpeg"
-                         alt="Profile Picture">
-
+                    <img src="images/profile_pic.jpeg" alt="Portrait of Rachel Gross">
                     <p class="lead">
-
                         I am an ICI Postdoctoral Fellow in the
-
                         <a href="https://astronomy.as.virginia.edu/"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            Department of Astronomy
-                        </a>
-
+                           target="_blank" rel="noopener noreferrer">Department of Astronomy</a>
                         at the University of Virginia.
-
                     </p>
-
                 </div> <!-- /intro-info -->
-
+                <div class="about-summary">
+                    <p>
+                        My research examines gas- and ice-phase chemistry in star- and
+                        planet-forming environments. I combine laboratory experiments,
+                        astronomical observations, chemical modeling, and radiative transfer
+                        to investigate how irradiation, temperature, and physical structure
+                        influence molecular abundances and volatile evolution.
+                    </p>
+                    <p>
+                        In the laboratory, I study the desorption and infrared properties
+                        of astrophysical ice analogues using cryogenic ultra-high-vacuum
+                        experiments. My observational work includes JWST spectroscopy of
+                        molecular ices in protostellar environments and developing studies
+                        of externally irradiated Orion silhouette disks. I also model disk
+                        gas and ice chemistry and use synthetic observations to investigate
+                        which chemical signatures can actually be recovered from astronomical data.
+                    </p>
+                </div> <!-- /about-summary -->
             </div> <!-- /col-twelve -->
-
         </div> <!-- /section-intro -->
-
     </section> <!-- /about -->
 
 
     <!-- RESEARCH / PORTFOLIO SECTION
     ================================================== -->
     <section id="portfolio">
-
         <div class="row section-intro">
-
             <div class="col-twelve">
-
                 <h5>Research</h5>
-
-                <h1>Past and Current Projects</h1>
-
+                <h1>Research Areas</h1>
             </div>
-
         </div> <!-- /section-intro -->
 
-
         <div class="row portfolio-content">
-
             <div class="col-twelve">
-
-                <div id="folio-wrapper"
-                     class="block-1-2 block-mob-full stack">
-
-
-                    <!-- RESEARCH CARD 1: EXPERIMENTAL
-                    ========================================== -->
-                    <div class="bgrid folio-item">
-
-                        <div class="item-wrap">
-
-                            <img src="images/portfolio/chamber.jpeg"
-                                 alt="Ice Laboratory">
-
-                            <a href="#modal-01" class="overlay">
-
-                                <div class="folio-item-table">
-
-                                    <div class="folio-item-cell">
-
-                                        <h3 class="folio-title">
-                                            Experimental
-                                        </h3>
-
-                                        <span class="folio-types">
-                                            Ice Laboratory with Ultra-High Vacuum
-                                        </span>
-
-                                    </div>
-
+                <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
+                <!-- CARD 1: LABORATORY ASTROCHEMISTRY -->
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <div class="research-tile research-lab" aria-hidden="true">
+                            <i class="fa-solid fa-flask-vial"></i>
+                            <span>Laboratory Astrochemistry</span>
+                        </div>
+                        <a href="#modal-01" class="overlay" aria-label="Read about Laboratory Astrochemistry">
+                            <div class="folio-item-table">
+                                <div class="folio-item-cell">
+                                    <h3 class="folio-title">Laboratory Astrochemistry</h3>
+                                    <span class="folio-types">Ultra-high-vacuum ice experiments</span>
                                 </div>
+                            </div>
+                        </a>
+                    </div>
+                </div> <!-- /folio-item -->
 
-                            </a>
-
+                <!-- CARD 2: JWST OBSERVATIONS -->
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <div class="research-tile research-jwst" aria-hidden="true">
+                            <i class="fa-solid fa-satellite"></i>
+                            <span>JWST Observations</span>
                         </div>
-
-                    </div> <!-- /folio-item -->
-
-
-                    <!-- RESEARCH CARD 2: OBSERVATIONS
-                    ========================================== -->
-                    <div class="bgrid folio-item">
-
-                        <div class="item-wrap">
-
-                            <img src="images/portfolio/protostar_ice.jpeg"
-                                 alt="Ice observations">
-
-                            <a href="#modal-02" class="overlay">
-
-                                <div class="folio-item-table">
-
-                                    <div class="folio-item-cell">
-
-                                        <h3 class="folio-title">
-                                            Observations
-                                        </h3>
-
-                                        <span class="folio-types">
-                                            Protostellar observations with JWST
-                                        </span>
-
-                                    </div>
-
+                        <a href="#modal-02" class="overlay" aria-label="Read about JWST Observations">
+                            <div class="folio-item-table">
+                                <div class="folio-item-cell">
+                                    <h3 class="folio-title">JWST Observations</h3>
+                                    <span class="folio-types">Ice spectroscopy with NIRSpec and MIRI</span>
                                 </div>
+                            </div>
+                        </a>
+                    </div>
+                </div> <!-- /folio-item -->
 
-                            </a>
-
+                <!-- CARD 3: CHEMICAL MODELING -->
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <div class="research-tile research-chem" aria-hidden="true">
+                            <i class="fa-solid fa-diagram-project"></i>
+                            <span>Chemical Modeling</span>
                         </div>
-
-                    </div> <!-- /folio-item -->
-
-
-                    <!-- RESEARCH CARD 3: THEORY
-                    ========================================== -->
-                    <div class="bgrid folio-item">
-
-                        <div class="item-wrap">
-
-                            <img src="images/artist_protodisk.jpeg"
-                                 alt="Protoplanetary Disk">
-
-                            <a href="#modal-03" class="overlay">
-
-                                <div class="folio-item-table">
-
-                                    <div class="folio-item-cell">
-
-                                        <h3 class="folio-title">
-                                            Theory
-                                        </h3>
-
-                                        <span class="folio-types">
-                                            Chemical modeling of externally
-                                            irradiated protoplanetary disks
-                                        </span>
-
-                                    </div>
-
+                        <a href="#modal-03" class="overlay" aria-label="Read about Chemical Modeling">
+                            <div class="folio-item-table">
+                                <div class="folio-item-cell">
+                                    <h3 class="folio-title">Chemical Modeling</h3>
+                                    <span class="folio-types">Gas and ice chemistry in irradiated disks</span>
                                 </div>
+                            </div>
+                        </a>
+                    </div>
+                </div> <!-- /folio-item -->
 
-                            </a>
-
+                <!-- CARD 4: RADIATIVE TRANSFER -->
+                <div class="bgrid folio-item">
+                    <div class="item-wrap">
+                        <div class="research-tile research-rt" aria-hidden="true">
+                            <i class="fa-solid fa-wave-square"></i>
+                            <span>Radiative Transfer</span>
                         </div>
+                        <a href="#modal-04" class="overlay" aria-label="Read about Radiative Transfer">
+                            <div class="folio-item-table">
+                                <div class="folio-item-cell">
+                                    <h3 class="folio-title">Radiative Transfer</h3>
+                                    <span class="folio-types">Synthetic observations and observability</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div> <!-- /folio-item -->
 
-                    </div> <!-- /folio-item -->
-
-
-
-                    <!-- MODAL POPUPS
-                    ========================================== -->
-
-
-                    <!-- MODAL 1: EXPERIMENTAL -->
-                    <div id="modal-01"
-                         class="popup-modal slider mfp-hide">
-
-                        <div class="media">
-
-                            <img src="images/portfolio/modals/m-liberty.jpg"
-                                 alt="">
-
+                <!-- PROJECT DETAILS: OPENED BY CLICKING THE CARDS -->
+                <!-- MODAL 1: LABORATORY ASTROCHEMISTRY -->
+                <div id="modal-01" class="popup-modal slider mfp-hide">
+                    <div class="media">
+                        <div class="research-modal-banner research-lab" aria-hidden="true">
+                            <i class="fa-solid fa-flask-vial"></i>
                         </div>
+                    </div>
+                    <div class="description-box">
+                        <h4>Laboratory Astrochemistry</h4>
+                        <p>I investigate the physical and chemical behavior of astrophysical ice analogues using cryogenic ultra-high-vacuum experiments. My research examines how ice composition and structure affect molecular desorption and infrared spectral properties, including experiments on methyl formate and developing studies of CO<sub>2</sub> ice porosity.</p>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://arxiv.org/abs/2609.27031" target="_blank" rel="noopener noreferrer">Methyl formate paper</a>
+                        <a href="#" class="popup-modal-dismiss">Close</a>
+                    </div>
+                </div> <!-- /modal-01 -->
 
-                        <div class="description-box">
-
-                            <h4>Ice chamber</h4>
-
-                            <p>Lab stuff description</p>
-
+                <!-- MODAL 2: JWST OBSERVATIONS -->
+                <div id="modal-02" class="popup-modal slider mfp-hide">
+                    <div class="media">
+                        <div class="research-modal-banner research-jwst" aria-hidden="true">
+                            <i class="fa-solid fa-satellite"></i>
                         </div>
+                    </div>
+                    <div class="description-box">
+                        <h4>JWST Observations</h4>
+                        <p>I use JWST spectroscopy to investigate molecular ices in protostellar and protoplanetary environments. For CORINOS IV, I developed a Monte Carlo baseline-fitting approach to quantify uncertainties in weak, blended SO<sub>2</sub> ice absorption features in MIRI spectra. Current work includes developing NIRSpec studies of ice survival in Orion silhouette disks.</p>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://doi.org/10.3847/1538-4357/ae2c81" target="_blank" rel="noopener noreferrer">CORINOS IV paper</a>
+                        <a href="#" class="popup-modal-dismiss">Close</a>
+                    </div>
+                </div> <!-- /modal-02 -->
 
-                        <div class="link-box">
-
-                            <a href="http://www.behance.net">
-                                Details
-                            </a>
-
-                            <a href="#"
-                               class="popup-modal-dismiss">
-                                Close
-                            </a>
-
+                <!-- MODAL 3: CHEMICAL MODELING -->
+                <div id="modal-03" class="popup-modal slider mfp-hide">
+                    <div class="media">
+                        <div class="research-modal-banner research-chem" aria-hidden="true">
+                            <i class="fa-solid fa-diagram-project"></i>
                         </div>
+                    </div>
+                    <div class="description-box">
+                        <h4>Chemical Modeling</h4>
+                        <p>I develop astrochemical models to study how external UV irradiation, disk structure, and molecular binding energies affect gas- and ice-phase abundances in protoplanetary disks. This work connects physical environments with chemical tracers, snowline locations, and synthetic molecular-line observations.</p>
+                    </div>
+                    <div class="link-box">
+                        <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980..189G/abstract" target="_blank" rel="noopener noreferrer">Disk chemistry paper</a>
+                        <a href="#" class="popup-modal-dismiss">Close</a>
+                    </div>
+                </div> <!-- /modal-03 -->
 
-                    </div> <!-- /modal-01 -->
-
-
-                    <!-- MODAL 2: OBSERVATIONS -->
-                    <div id="modal-02"
-                         class="popup-modal slider mfp-hide">
-
-                        <div class="media">
-
-                            <img src="images/portfolio/modals/m-shutterbug.jpg"
-                                 alt="">
-
+                <!-- MODAL 4: RADIATIVE TRANSFER -->
+                <div id="modal-04" class="popup-modal slider mfp-hide">
+                    <div class="media">
+                        <div class="research-modal-banner research-rt" aria-hidden="true">
+                            <i class="fa-solid fa-wave-square"></i>
                         </div>
-
-                        <div class="description-box">
-
-                            <h4>JWST</h4>
-
-                            <p>CORINOS</p>
-
-                        </div>
-
-                        <div class="link-box">
-
-                            <a href="http://www.behance.net">
-                                Details
-                            </a>
-
-                            <a href="#"
-                               class="popup-modal-dismiss">
-                                Close
-                            </a>
-
-                        </div>
-
-                    </div> <!-- /modal-02 -->
-
-
-                    <!-- MODAL 3: THEORY -->
-                    <div id="modal-03"
-                         class="popup-modal slider mfp-hide">
-
-                        <div class="media">
-
-                            <img src="images/artist_protodisk.jpeg"
-                                 alt="">
-
-                        </div>
-
-                        <div class="description-box">
-
-                            <h4>Theory</h4>
-
-                            <p>
-                                chemical modeling of moderately
-                                externally irradiated protoplanetary disks
-                            </p>
-
-                        </div>
-
-                        <div class="link-box">
-
-                            <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980..189G/abstract"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                Details
-                            </a>
-
-                            <a href="#"
-                               class="popup-modal-dismiss">
-                                Close
-                            </a>
-
-                        </div>
-
-                    </div> <!-- /modal-03 -->
-
-
-                </div> <!-- /portfolio-wrapper -->
-
+                    </div>
+                    <div class="description-box">
+                        <h4>Radiative Transfer</h4>
+                        <p>I use radiative-transfer calculations to investigate how molecular signatures are shaped by the paths light takes through a disk. By constructing synthetic observations of edge-on and silhouette disks, I examine how scattering, geometry, and spectral extraction affect the recovery of ice absorption and observable environmental signatures. This work is ongoing.</p>
+                    </div>
+                    <div class="link-box">
+                        
+                        <a href="#" class="popup-modal-dismiss">Close</a>
+                    </div>
+                </div> <!-- /modal-04 -->
+                </div> <!-- /folio-wrapper -->
             </div> <!-- /col-twelve -->
-
         </div> <!-- /portfolio-content -->
-
     </section> <!-- /portfolio -->
 
 
+    <!-- SCIENCE COMMUNICATION AND OUTREACH
+    ================================================== -->
+    <section id="outreach" style="padding: 7rem 0;">
+        <div class="row section-intro">
+            <div class="col-twelve">
+                <h5>Science Communication</h5>
+                <h1>Outreach &amp; Media</h1>
+                <p class="lead">Astrochem Coffee Podcast</p>
+                <p>
+                    In the January 2025 episode, I joined the <em>Single-Origin Brew</em>
+                    segment to discuss my research on how moderate external UV irradiation
+                    affects protoplanetary disk chemistry.
+                </p>
+                <a class="button" href="https://shows.acast.com/astrochem-coffee/episodes/january-2025-its-a-sulfurous-universe-man"
+                   target="_blank" rel="noopener noreferrer">Listen to the episode</a>
+            </div>
+        </div>
+    </section> <!-- /outreach -->
 
     <!-- CONTACT SECTION
     ================================================== -->
