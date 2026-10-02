@@ -178,6 +178,49 @@
       .feature-media img { max-height: 320px; }
     }
     @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    
+/* Make the methyl formate figure larger */
+.feature--wide-figure {
+    grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+    gap: 28px;
+}
+
+.feature--wide-figure .feature-media img {
+    max-height: none;
+    width: 100%;
+    height: auto;
+}
+    
+/* Center the personal photo preview */
+.personal-preview {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+    max-width: 700px;
+    margin: 18px 0 0;
+}
+
+.personal-preview figure {
+    width: 190px;
+    max-width: calc(50% - 8px);
+    margin: 0;
+}
+
+.personal-preview img {
+    display: block;
+    width: 100%;
+    height: 125px;
+    object-fit: cover;
+}
+
+/* Center the expandable gallery link */
+.personal-gallery > summary {
+    display: block;
+    text-align: center;
+}
+
+
   </style>
 </head>
 <body>
@@ -220,8 +263,16 @@
         <div class="about-copy">
           <h2 class="about-heading">About Me</h2>
           <p>I am an ICI Postdoctoral Fellow in the Department of Astronomy at the University of Virginia, working with Prof. Ilse Cleeves and Prof. Catherine Dukes. I received my Ph.D. in Chemistry from UVA in May 2026.</p>
-          <p>At the center of my research are astrophysical ice species: how their composition and structure change with their surrounding matrix and thermal processing, as well as their thermal desorption behavior. Gas- and ice-phase chemistry are closely connected, so I also study the molecules in the gas and the disk conditions that shape their distributions.</p>
-          <p>I bring together cryogenic laboratory experiments, infrared spectroscopy, chemical modeling, and radiative transfer. </p>
+          <p>
+    My research focuses on astrochemistry in star- and
+    planet-forming environments, with a particular interest
+    in the physical chemistry of astrophysical ices and
+    their relationship to gas-phase abundances. My work
+    spans cryogenic laboratory experiments, JWST infrared
+    spectroscopy, chemical modeling, and radiative transfer,
+    investigating molecular processes from protostellar
+    environments to protoplanetary disks.
+</p>
           <div class="link-row" aria-label="Academic links">
             <a class="button button--solid" href="CV_RG_updated.pdf" target="_blank" rel="noopener noreferrer">Curriculum vitae ↗</a>
             <a class="button" href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-0477-6047" target="_blank" rel="noopener noreferrer">All publications ↗</a>
@@ -255,22 +306,22 @@
             <summary>More photos from outside the lab <span aria-hidden="true">&#x279C;</span></summary>
             <div class="personal-gallery-grid">
               <figure>
-                <a href="images/portfolio/images/personal/equestrian_jumping.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/equestrian_jumping.jpeg" alt="Horse and rider jumping a fence" loading="lazy" decoding="async"></a>
+                <a href="images/portfolio/images/personal/equestrian_jumping.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/portfolio/images/personal/equestrian_jumping.jpeg" alt="Horse and rider jumping a fence" loading="lazy" decoding="async"></a>
               </figure>
               <figure>
-                <a href="images/portfolio/images/personal/glacier_trek.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/glacier_trek.jpeg" alt="Roped hikers traversing a glacier" loading="lazy" decoding="async"></a>
+                <a href="images/portfolio/images/personal/glacier_trek.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/portfolio/images/personal/glacier_trek.jpeg" alt="Roped hikers traversing a glacier" loading="lazy" decoding="async"></a>
               </figure>
               <figure>
-                <a href="images/portfolio/images/personal/backpacking_bridge.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/backpacking_bridge.jpeg" alt="Rachel crossing a footbridge on a backpacking trip" loading="lazy" decoding="async"></a>
+                <a href="images/portfolio/images/personal/backpacking_bridge.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/portfolio/images/personal/backpacking_bridge.jpeg" alt="Rachel crossing a footbridge on a backpacking trip" loading="lazy" decoding="async"></a>
               </figure>
               <figure>
-                <a href="images/portfolio/images/personal/mountain_camp.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/mountain_camp.jpeg" alt="Tents beneath a mountain and glacier" loading="lazy" decoding="async"></a>
+                <a href="images/portfolio/images/personal/mountain_camp.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/portfolio/images/personal/mountain_camp.jpeg" alt="Tents beneath a mountain and glacier" loading="lazy" decoding="async"></a>
               </figure>
               <figure>
-                <a href="images/portfolio/images/personal/coastal_sunset.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/coastal_sunset.jpeg" alt="Orange coastal sunset with silhouetted palm trees" loading="lazy" decoding="async"></a>
+                <a href="images/portfolio/images/personal/coastal_sunset.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/portfolio/images/personal/coastal_sunset.jpeg" alt="Orange coastal sunset with silhouetted palm trees" loading="lazy" decoding="async"></a>
               </figure>
               <figure>
-                <a href="images/portfolio/images/personal/snowy_mountain.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/snowy_mountain.jpeg" alt="Snow-covered mountain above evergreen forest" loading="lazy" decoding="async"></a>
+                <a href="images/portfolio/images/personal/snowy_mountain.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/portfolio/images/personal/snowy_mountain.jpeg" alt="Snow-covered mountain above evergreen forest" loading="lazy" decoding="async"></a>
               </figure>
             </div>
           </details>
@@ -285,7 +336,7 @@
       <div class="section-intro">
         <p class="eyebrow">What I'm working on</p>
         <h2 class="section-title">Current Research</h2>
-        <p>My current projects connect gas and ice chemistry to the physical conditions of planet-forming environments and to the spectra we can recover from them.</p>
+        
       </div>
 
       <article class="feature">
@@ -320,8 +371,8 @@
 </p>
 </div>
         <figure class="feature-media">
-          <a href="images/portfolio/radtran_compare_apertures_G1_vs_G100.jpeg" target="_blank" rel="noopener noreferrer" title="Open figure full size">
-            <img src="images/portfolio/radtran_compare_apertures_G1_vs_G100.jpeg" alt="Synthetic edge-on disk continuum image with aperture locations and extracted spectra" loading="lazy" decoding="async">
+          <a href="images/portfolio/images/personal/radtran_compare_apertures_G1_vs_G100.jpeg" target="_blank" rel="noopener noreferrer" title="Open figure full size">
+            <img src="images/portfolio/images/personal/radtran_compare_apertures_G1_vs_G100.jpeg" alt="Synthetic edge-on disk continuum image with aperture locations and extracted spectra" loading="lazy" decoding="async">
           </a>
           <figcaption>Synthetic images and spatially extracted ice spectra for an edge-on disk model.</figcaption>
         </figure>
@@ -474,7 +525,7 @@ with JWST</h3>
         </figure>
       </article>
 
-      <article class="feature">
+      <article class="feature feature--wide-figure">
         <div class="feature-text">
           <span class="feature-status">Chemical modeling · 2025</span>
           <h3>What changes when a disk forms near massive stars?</h3>
@@ -506,8 +557,8 @@ with JWST</h3>
           </div>
         </div>
         <figure class="feature-media">
-          <a href="images/portfolio/C_CS_HCOP_N2HP_spectra_paper1.jpeg" target="_blank" rel="noopener noreferrer" title="Open molecular line-profile figure full size">
-            <img src="images/portfolio/C_CS_HCOP_N2HP_spectra_paper1..jpeg" alt="Synthetic molecular-line profiles for several gas-phase tracers under different external UV fields" loading="lazy" decoding="async">
+          <a href="images/portfolio/images/personal/C_CS_HCOP_N2HP_spectra_paper1.jpeg" target="_blank" rel="noopener noreferrer" title="Open molecular line-profile figure full size">
+            <img src="images/portfolio/images/personal/C_CS_HCOP_N2HP_spectra_paper1..jpeg" alt="Synthetic molecular-line profiles for several gas-phase tracers under different external UV fields" loading="lazy" decoding="async">
           </a>
           <figcaption>Synthetic molecular-line profiles for disks exposed to different external UV fields.</figcaption>
         </figure>
