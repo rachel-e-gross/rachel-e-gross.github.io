@@ -1,672 +1,388 @@
-
 <!DOCTYPE html>
-<html class="no-js" lang="en">
-
+<html lang="en">
 <head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#332438">
+  <title>Rachel Erin Gross | Astrochemistry &amp; Planet Formation | University of Virginia</title>
+  <meta name="description" content="Rachel Erin Gross (R. E. Gross) is an ICI Postdoctoral Fellow at the University of Virginia studying gas- and ice-phase chemistry in star- and planet-forming environments through laboratory astrochemistry, JWST observations, chemical modeling, and radiative transfer.">
+  <meta name="author" content="Rachel Gross">
+  <link rel="icon" type="image/png" href="favicon.png">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Rachel Erin Gross",
+    "alternateName": ["Rachel Gross", "R. E. Gross"],
+    "jobTitle": "ICI Postdoctoral Fellow",
+    "affiliation": {"@type": "CollegeOrUniversity", "name": "University of Virginia"},
+    "sameAs": [
+      "https://orcid.org/0000-0002-0477-6047",
+      "https://github.com/rachel-e-gross"
+    ]
+  }
+  </script>
 
-    <!-- Basic page needs
-    ================================================== -->
-    <meta charset="utf-8">
+  <!-- Self-contained styling: no changes to css/custom.css or JavaScript needed. -->
+  <style>
+    :root {
+      --plum: #633e75;
+      --plum-dark: #382a40;
+      --mauve: #80658a;
+      --ink: #252229;
+      --body: #434047;
+      --muted: #716976;
+      --line: #e8dfe8;
+      --cream: #faf7f5;
+      --warm: #f2e7e1;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: #fff; color: var(--body); font: 17px/1.72 Georgia, 'Times New Roman', serif; }
+    img { display: block; max-width: 100%; }
+    a { color: var(--plum); text-underline-offset: .18em; }
+    a:hover { color: #915a8e; }
+    h1, h2, h3, h4, nav, .eyebrow, .button, .brand, .feature-status, figcaption, footer, .about-role {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+    }
+    h1, h2, h3, h4 { color: var(--ink); line-height: 1.2; }
+    p { margin: 0 0 1em; }
+    [id] { scroll-margin-top: 88px; }
+    .wrap { width: min(1100px, calc(100% - 48px)); margin-inline: auto; }
+    .site-nav { background: rgba(255,255,255,.98); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 40; }
+    .nav-inner { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+    .brand { font-size: 17px; font-weight: 760; letter-spacing: -.02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
+    .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 19px; }
+    .nav-links a { color: #514954; font: 650 13px/1.4 -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; text-decoration: none; }
+    .nav-links a:hover, .nav-links a:focus { color: var(--plum); text-decoration: underline; }
+    .nav-links .nav-cv { background: var(--plum); padding: 9px 13px; color: #fff; }
+    .nav-links .nav-cv:hover { background: var(--plum-dark); color: #fff; text-decoration: none; }
 
-    <title>Rachel Erin Gross | Astrochemistry &amp; Planet Formation | University of Virginia</title>
+    /* Short introduction and a visible crop of your Keck sunset photograph. */
+    .hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(310px, 38%); min-height: 237px; background: var(--plum-dark); }
+    .hero-copy { padding: 32px max(24px, calc((100vw - 1100px) / 2)) 28px; padding-right: 20px; display: flex; flex-direction: column; justify-content: center; }
+    .hero .eyebrow { color: #e8cec0; margin: 0 0 5px; letter-spacing: .15em; font: 750 11px/1.5 -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; text-transform: uppercase; }
+    .hero h1 { color: white; font-size: clamp(37px, 4vw, 59px); margin: 0 0 5px; letter-spacing: -.04em; }
+    .hero .tagline { color: #f3e8f4; margin: 0; font-size: 16px; line-height: 1.6; }
+    .hero-image { position: relative; min-height: 237px; margin: 0; overflow: hidden; background: #604b49; }
+    .hero-image a { display: block; position: absolute; inset: 0; }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; object-position: center 43%; }
+    .hero-image figcaption { position: absolute; bottom: 9px; right: 11px; color: white; background: rgba(29,20,31,.6); font-size: 11px; line-height: 1.2; padding: 5px 8px; }
 
-    <meta name="description"
-          content="Rachel Gross (R. E. Gross) is an ICI Postdoctoral Fellow at the University of Virginia researching gas- and ice-phase astrochemistry through laboratory experiments, JWST observations, chemical modeling, and radiative transfer.">
+    .section { padding: 66px 0; }
+    .section--soft { background: var(--cream); }
+    .section--white { background: white; }
+    .eyebrow { color: var(--plum); text-transform: uppercase; letter-spacing: .16em; font-size: 12px; font-weight: 750; margin: 0 0 7px; }
+    .section-title { margin: 0 0 20px; font-size: clamp(30px, 3vw, 39px); letter-spacing: -.035em; }
+    .section-intro { max-width: 790px; margin-bottom: 35px; }
+    .section-intro p { margin-bottom: 0; }
 
-    <meta name="author" content="Rachel Gross">
+    /* Portrait and biography stay in the two-column format you liked. */
+    .about-grid { display: grid; grid-template-columns: 195px minmax(0, 1fr); gap: 42px; align-items: start; }
+    .portrait { width: 195px; height: 195px; object-fit: cover; border-radius: 50%; }
+    .about-copy h3 { margin: 0 0 5px; font-size: 24px; }
+    .about-role { font-size: 14px; line-height: 1.5; color: var(--plum); font-weight: 650; margin-bottom: 20px; }
+    .link-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+    .button { text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid #b29fb7; padding: 9px 13px; color: var(--plum); background: white; font-size: 12px; font-weight: 700; letter-spacing: .015em; line-height: 1.3; }
+    .button:hover, .button:focus { background: var(--plum); color: white; border-color: var(--plum); }
+    .button--solid { background: var(--plum); border-color: var(--plum); color: white; }
+    .button--solid:hover { background: var(--plum-dark); }
+    .personal { border-top: 1px solid var(--line); margin-top: 34px; padding-top: 20px; display: grid; grid-template-columns: 195px minmax(0,1fr); gap: 42px; }
+    .personal h3 { color: var(--plum); font-size: 17px; margin: 3px 0; }
+    .personal p { margin: 0; }
 
-    <!-- Mobile specific metas
-    ================================================== -->
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1, maximum-scale=1">
+    /* Research is now visible content, not thumbnail cards or modal windows. */
+    .feature { display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr); align-items: start; gap: 38px; padding: 36px 0; border-top: 1px solid var(--line); }
+    .feature--reverse { grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); }
+    .feature--reverse .feature-text { order: 2; }
+    .feature--reverse .feature-media { order: 1; }
+    .feature-status { display: inline-block; color: var(--plum); font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; margin: 0 0 9px; }
+    .feature h3 { font-size: 25px; margin: 0 0 15px; letter-spacing: -.02em; }
+    .feature p { font-size: 16px; }
+    .feature .feature-cta { margin: 20px 0 0; display: flex; flex-wrap: wrap; gap: 9px; }
+    .feature-media { margin: 0; min-width: 0; }
+    .feature-media > a { display: block; padding: 8px; border: 1px solid var(--line); background: white; text-decoration: none; }
+    .feature-media img { width: 100%; max-height: 340px; height: auto; object-fit: contain; background: white; }
+    .feature-media img.photo { max-height: 360px; aspect-ratio: 4 / 3; object-fit: cover; }
+    .feature-media figcaption { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 9px; }
+    .feature-media figcaption a { font-size: inherit; }
+    .research-note { padding: 21px 25px; margin-top: 15px; border-left: 3px solid var(--mauve); background: white; }
+    .research-note h3 { margin: 0 0 9px; font-size: 19px; }
+    .research-note p { margin: 0; font-size: 16px; }
+    .group-gap { margin-top: 12px; }
 
-    <!-- CSS
-    ================================================== -->
-    <link rel="stylesheet" href="css/base.css">
-    <link rel="stylesheet" href="css/main.css">
-    <link rel="stylesheet" href="css/vendor.css">
-    <link rel="stylesheet" href="css/custom.css?v=1">
+    /* Publications, outreach and contact keep the bottom of the homepage compact. */
+    .pub-list { list-style: none; padding: 0; margin: 0 0 20px; }
+    .pub-list li { margin: 0; padding: 14px 0; border-top: 1px solid var(--line); }
+    .pub-list li:last-child { border-bottom: 1px solid var(--line); }
+    .pub-year { display: inline-block; min-width: 53px; color: var(--plum); font: 750 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; }
+    .pub-list a { font-weight: bold; }
+    .outreach-row { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
+    .contact-grid h3 { font-size: 17px; margin: 0 0 8px; }
+    .contact-grid p { margin-bottom: 0; }
+    .site-footer { padding: 18px 0; border-top: 1px solid var(--line); color: #756d77; font: 12px/1.55 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; }
+    .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 
-    <!-- Font Awesome Icons -->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
-          crossorigin="anonymous"
-          referrerpolicy="no-referrer">
-
-    <!-- Scripts
-    ================================================== -->
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/png" href="favicon.png">
-
-    <!-- Compact sunset header and two-column About section.
-         Styling is kept in this file so custom.css does not need editing. -->
-    <style>
-        /* Compact orange-sunset banner, replacing the full-screen intro */
-        html body #intro {
-            box-sizing: border-box;
-            display: block !important;
-            position: relative;
-            width: 100%;
-            height: 210px !important;
-            min-height: 0 !important;
-            padding: 32px 18px 25px !important;
-            background: linear-gradient(90deg,
-                rgba(19,15,20,.45), rgba(19,15,20,.25)),
-                url("images/keck_sunset.jpeg") center 42% / cover no-repeat !important;
-            text-align: center;
-        }
-        #intro .intro-overlay {
-            position: absolute;
-            inset: 0;
-            width: 100%; height: 100%;
-            background: rgba(19,15,20,.08) !important;
-            opacity: 1 !important;
-        }
-        #intro .intro-content {
-            display: block !important;
-            position: relative !important;
-            width: 100%;
-            margin: 0 auto !important;
-            padding: 0 !important;
-            -webkit-transform: none !important;
-            transform: none !important;
-            vertical-align: initial !important;
-        }
-        #intro .intro-content h1 {
-            margin: 8px auto 7px !important;
-            font-size: clamp(37px, 4.2vw, 62px) !important;
-            line-height: 1.14 !important;
-            letter-spacing: -.02em;
-            color: #fff !important;
-            text-shadow: 0 2px 16px rgba(0,0,0,.55);
-        }
-        #intro .header-kicker {
-            display: block;
-            margin: 0;
-            color: #fff4e9;
-            font-family: inherit;
-            font-size: 1.23rem;
-            font-weight: 600;
-            letter-spacing: .15em;
-            text-transform: uppercase;
-        }
-        #intro .header-role {
-            display: block;
-            margin: 5px auto 0 !important;
-            color: #fff7ef;
-            font-size: 1.3rem !important;
-            line-height: 1.5;
-            letter-spacing: .08em;
-            text-shadow: 0 1px 8px rgba(0,0,0,.6);
-        }
-        /* About is the real landing-page content, not another full-screen panel. */
-        html body #about {
-            padding: 46px 20px 56px !important;
-            background: #fff;
-        }
-        #about .about-container {
-            max-width: 1010px;
-            margin: 0 auto;
-        }
-        #about .about-kicker {
-            margin: 0 0 5px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            letter-spacing: .18em;
-            text-transform: uppercase;
-            color: #825777;
-        }
-        #about h1 {
-            margin: 0 0 25px !important;
-            line-height: 1.2;
-            text-align: left;
-        }
-        #about .about-grid {
-            display: grid;
-            grid-template-columns: 220px minmax(0,1fr);
-            gap: 42px;
-            align-items: start;
-        }
-        #about .about-portrait img {
-            display: block;
-            box-sizing: border-box;
-            margin: 0 !important;
-            width: 220px;
-            height: 220px;
-            max-width: 100%;
-            float: none !important;
-            border-radius: 50%;
-            object-fit: cover;
-            object-position: center;
-        }
-        #about .about-bio h2 {
-            margin: 0 0 3px;
-            font-size: 2.45rem;
-            line-height: 1.3;
-            color: #242424;
-        }
-        #about .about-role {
-            margin: 0 0 14px !important;
-            color: #76536f;
-            font-size: 1.28rem !important;
-            letter-spacing: .025em;
-            font-weight: 600;
-            line-height: 1.6;
-        }
-        #about .about-bio p,
-        #about .about-personal p {
-            text-align: left !important;
-            font-size: 1.61rem;
-            color: #494949;
-            line-height: 1.68;
-            margin: 0 0 12px;
-        }
-        #about a {color: #633e75;}
-        #about .about-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin: 20px 0 0;
-        }
-        #about .about-links a {
-            display: inline-block;
-            border: 1px solid #a58aa8;
-            color: #633e75;
-            text-decoration: none;
-            padding: 10px 14px;
-            font-size: 1.2rem;
-            font-weight: 700;
-            line-height: 1.35;
-            letter-spacing: .06em;
-        }
-        #about .about-links a:hover,
-        #about .about-links a:focus {
-            color: white;
-            background: #633e75;
-        }
-        #about .about-personal {
-            display: grid;
-            grid-template-columns: 220px minmax(0,1fr);
-            gap: 42px;
-            margin-top: 30px;
-            padding-top: 21px;
-            border-top: 1px solid #e7e1e8;
-        }
-        #about .about-personal h3 {
-            margin: 0;
-            color: #633e75;
-            font-size: 1.65rem;
-        }
-        /* Keep Research close to About instead of leaving a huge empty gap. */
-        html body #portfolio { padding-top: 56px !important; }
-        /* Keep research tiles and all their existing paper links. */
-        #portfolio .research-tile {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            min-height: 280px;
-            width: 100%;
-            color: #fff;
-        }
-        /* Homepage card photos: these can be changed independently of modal images below. */
-        #portfolio .research-tile {
-            justify-content: flex-end;
-            padding: 15px;
-            background-repeat: no-repeat;
-        }
-        #portfolio .research-tile i { display: none; }
-        #portfolio .research-tile span {
-            display: inline-block;
-            background: rgba(22,18,27,.77);
-            color: #fff; font-size: 13px; font-weight: 650;
-            letter-spacing: .11em; text-align: center; text-transform: uppercase;
-            padding: 9px 14px;
-        }
-        .research-lab {
-            background: #2d2630 url("images/portfolio/uhv_chamber_closeup.jpeg") center / cover no-repeat;
-        }
-        .research-jwst {
-            background: #fff url("images/portfolio/jwst_h2_emission_maps.jpeg") center / contain no-repeat;
-        }
-        .research-chem {
-            background: #fff url("images/portfolio/chemical_model_line_profiles.jpeg") center / contain no-repeat;
-        }
-        .research-rt {
-            background: #fff url("images/portfolio/radiative_transfer_apertures.jpeg") center / contain no-repeat;
-        }
-        /* Keep the two short research paragraphs readable in the existing popups. */
-        #portfolio .description-box p { line-height: 1.55; margin-bottom: 11px; }
-        #portfolio .description-box p strong { color: #633e75; }
-
-        /* Modal figures are shown whole, not cropped. Click to open them full-size. */
-        #portfolio .research-figure-zoom { display: block; cursor: zoom-in; }
-        #portfolio .research-modal-image,
-        #portfolio .research-modal-image.lab-photo {
-            display: block;
-            box-sizing: border-box;
-            width: 100%;
-            height: auto;
-            max-height: min(60vh, 520px);
-            object-fit: contain;
-            background: #fff;
-        }
-        #portfolio .research-tile { box-sizing: border-box; }
-        @media only screen and (max-width: 700px) {
-            html body #intro { height: 185px !important; padding-top: 27px !important; }
-            #intro .intro-content h1 { font-size: 4rem !important; }
-            #intro .header-role { font-size: 1.1rem !important; }
-            html body #about { padding: 34px 19px 46px !important; }
-            #about h1 { text-align: center; }
-            #about .about-grid, #about .about-personal {
-                grid-template-columns: minmax(0, 1fr);
-                gap: 18px;
-            }
-            #about .about-portrait img { margin: 0 auto !important; width: 180px; height: 180px; }
-            #about .about-bio h2, #about .about-role { text-align: center; }
-            #about .about-bio p, #about .about-personal p { font-size: 1.48rem; }
-            #about .about-links { justify-content: center; }
-            #about .about-personal { margin-top: 26px; }
-            #portfolio .research-tile { min-height: 220px; }
-        }
-    </style>
-
+    @media (max-width: 850px) {
+      .nav-inner { align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 10px; }
+      .nav-links { gap: 12px 15px; }
+      [id] { scroll-margin-top: 120px; }
+      .hero { grid-template-columns: minmax(0,1fr) 38%; }
+      .hero-copy { padding-left: 24px; }
+      .about-grid { grid-template-columns: 155px minmax(0,1fr); gap: 24px; }
+      .portrait { width: 155px; height: 155px; }
+      .personal { grid-template-columns: 155px minmax(0,1fr); gap: 24px; }
+      .feature, .feature--reverse { grid-template-columns: minmax(0,1fr); gap: 18px; }
+      .feature--reverse .feature-text, .feature--reverse .feature-media { order: initial; }
+      .feature-media { max-width: 680px; }
+    }
+    @media (max-width: 560px) {
+      .wrap { width: min(100% - 32px, 1100px); }
+      .hero { grid-template-columns: minmax(0, 1fr); }
+      .hero-copy { padding: 25px 16px 22px; }
+      .hero-image { min-height: 160px; }
+      .hero-image img { object-position: center 40%; }
+      .section { padding: 43px 0; }
+      .about-grid { display: block; }
+      .portrait { width: 150px; height: 150px; margin-bottom: 18px; }
+      .personal { grid-template-columns: 1fr; gap: 10px; margin-top: 24px; }
+      .outreach-row, .contact-grid { grid-template-columns: 1fr; gap: 14px; }
+      .feature { padding: 27px 0; }
+      .feature h3 { font-size: 23px; }
+      .feature-media img { max-height: 320px; }
+    }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
 </head>
+<body>
 
-
-<body id="top">
-
-    <!-- Header
-    ================================================== -->
-    <header>
-        <div class="row">
-        </div>
-    </header>
-
-
-    <!-- COMPACT SUNSET HEADER
-    ================================================== -->
-    <section id="intro" aria-label="Rachel Erin Gross, astrochemist">
-        <div class="intro-overlay"></div>
-        <div class="intro-content">
-            <div class="row"><div class="col-twelve">
-                <span class="header-kicker">Astrochemistry &amp; Planet Formation</span>
-                <h1>Rachel Erin Gross</h1>
-                <p class="header-role">ICI Postdoctoral Fellow &nbsp;|&nbsp; University of Virginia</p>
-            </div></div>
-        </div>
-    </section> <!-- /intro -->
-
-
-    <!-- ABOUT SECTION: MAIN LANDING CONTENT
-    ================================================== -->
-    <section id="about">
-        <div class="row">
-            <div class="col-twelve">
-                <div class="about-container">
-                    <p class="about-kicker">About</p>
-                    <h1>A little about me</h1>
-                    <div class="about-grid">
-                        <div class="about-portrait">
-                            <img src="images/profile_pic.jpeg" alt="Portrait of Rachel Gross">
-                        </div>
-                        <div class="about-bio">
-                            <h2>Rachel Gross</h2>
-                            <p class="about-role">ICI Postdoctoral Fellow · Department of Astronomy, University of Virginia</p>
-                            <p>
-                                I am an ICI Postdoctoral Fellow at the University of Virginia,
-                                working with Prof. Ilse Cleeves and Prof. Catherine Dukes.
-                                I received my Ph.D. in Chemistry from UVA in May 2026.
-                            </p>
-                            <p>
-                                I am particularly interested in astrophysical ices: how their
-                                composition and structure change with their surroundings, when
-                                molecules desorb into the gas, and which icy materials survive
-                                into planet-forming disks. Because gas and ice are chemically
-                                connected, I also study gas-phase abundances and molecular tracers.
-                            </p>
-                            <p>
-                                I bring together cryogenic laboratory experiments, JWST
-                                spectroscopy, chemical modeling, and radiative transfer to
-                                connect the physical chemistry of gas and ice with what we can
-                                actually infer from astronomical observations.
-                            </p>
-                            <div class="about-links" aria-label="Academic links">
-                                <a href="CV_RG_updated.pdf" target="_blank" rel="noopener noreferrer">Curriculum vitae ↗</a>
-                                <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-0477-6047"
-                                   target="_blank" rel="noopener noreferrer">Publications ↗</a>
-                                <a href="https://orcid.org/0000-0002-0477-6047" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
-                                <a href="mailto:reg4ff@virginia.edu">Email ↗</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="about-personal">
-                        <h3>Beyond research</h3>
-                        <p>
-                            Before entering academia, I spent over a decade as a professional
-                            equestrian athlete, competing in dressage and three-day eventing.
-                            Outside of research, I enjoy hiking, trail running, and playing the cello.
-                        </p>
-                    </div>
-                </div> <!-- /about-container -->
-            </div> <!-- /col-twelve -->
-        </div> <!-- /row -->
-    </section> <!-- /about -->
-
-
-    <!-- RESEARCH / PORTFOLIO SECTION
-    ================================================== -->
-    <section id="portfolio">
-        <div class="row section-intro">
-            <div class="col-twelve">
-                <h5>Research</h5>
-                <h1>Research Areas</h1>
-            </div>
-        </div> <!-- /section-intro -->
-
-        <div class="row portfolio-content">
-            <div class="col-twelve">
-                <div id="folio-wrapper" class="block-1-2 block-mob-full stack">
-                <!-- CARD 1: LABORATORY ASTROCHEMISTRY -->
-                <div class="bgrid folio-item">
-                    <div class="item-wrap">
-                        <div class="research-tile research-lab" aria-hidden="true">
-                            <i class="fa-solid fa-flask-vial"></i>
-                            <span>Laboratory Astrochemistry</span>
-                        </div>
-                        <a href="#modal-01" class="overlay" aria-label="Read about Laboratory Astrochemistry">
-                            <div class="folio-item-table">
-                                <div class="folio-item-cell">
-                                    <h3 class="folio-title">Laboratory Astrochemistry</h3>
-                                    <span class="folio-types">Desorption, ice spectroscopy &amp; instrumentation</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div> <!-- /folio-item -->
-
-                <!-- CARD 2: JWST OBSERVATIONS -->
-                <div class="bgrid folio-item">
-                    <div class="item-wrap">
-                        <div class="research-tile research-jwst" aria-hidden="true">
-                            <i class="fa-solid fa-satellite"></i>
-                            <span>JWST Observations</span>
-                        </div>
-                        <a href="#modal-02" class="overlay" aria-label="Read about JWST Observations">
-                            <div class="folio-item-table">
-                                <div class="folio-item-cell">
-                                    <h3 class="folio-title">JWST Observations</h3>
-                                    <span class="folio-types">Measuring weak ice features with JWST/MIRI</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div> <!-- /folio-item -->
-
-                <!-- CARD 3: CHEMICAL MODELING -->
-                <div class="bgrid folio-item">
-                    <div class="item-wrap">
-                        <div class="research-tile research-chem" aria-hidden="true">
-                            <i class="fa-solid fa-diagram-project"></i>
-                            <span>Chemical Modeling</span>
-                        </div>
-                        <a href="#modal-03" class="overlay" aria-label="Read about Chemical Modeling">
-                            <div class="folio-item-table">
-                                <div class="folio-item-cell">
-                                    <h3 class="folio-title">Chemical Modeling</h3>
-                                    <span class="folio-types">External UV, gas–ice chemistry &amp; tracers</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div> <!-- /folio-item -->
-
-                <!-- CARD 4: RADIATIVE TRANSFER -->
-                <div class="bgrid folio-item">
-                    <div class="item-wrap">
-                        <div class="research-tile research-rt" aria-hidden="true">
-                            <i class="fa-solid fa-wave-square"></i>
-                            <span>Radiative Transfer</span>
-                        </div>
-                        <a href="#modal-04" class="overlay" aria-label="Read about Radiative Transfer">
-                            <div class="folio-item-table">
-                                <div class="folio-item-cell">
-                                    <h3 class="folio-title">Radiative Transfer</h3>
-                                    <span class="folio-types">Disk geometry, scattering &amp; ice observability</span>
-                                </div>
-                            </div>
-                        </a>
-                    </div>
-                </div> <!-- /folio-item -->
-
-                <!-- PROJECT DETAILS: Each modal uses a different, full-size figure. -->
-                <!-- MODAL 1: LABORATORY ASTROCHEMISTRY -->
-                <div id="modal-01" class="popup-modal slider mfp-hide">
-                    <div class="media">
-                        <a class="research-figure-zoom"
-                           href="images/portfolio/mf_desorption_data.jpeg"
-                           target="_blank" rel="noopener noreferrer"
-                           title="Open full-size research figure">
-                            <img class="research-modal-image"
-                                 src="images/portfolio/mf_desorption_data.jpeg"
-                                 alt="Methyl formate temperature-programmed desorption measurements on water and methanol ice substrates">
-                        </a>
-                    </div>
-                    <div class="description-box">
-                        <h4>Laboratory Astrochemistry</h4>
-                        <p><strong>Published work — methyl formate desorption.</strong> Complex organic molecules are often assumed to remain associated with H<sub>2</sub>O-rich ice until the water matrix sublimates, yet methyl formate is observed in gas at lower temperatures. Using temperature-programmed desorption experiments, we measured its behavior on amorphous and crystalline H<sub>2</sub>O and CH<sub>3</sub>OH substrates. We found weaker binding on CH<sub>3</sub>OH ice, with characteristic desorption near 85 K rather than roughly 95–100 K on H<sub>2</sub>O substrates. The result shows how the surrounding ice can affect when complex organics enter the gas, without requiring bulk water-ice sublimation.</p>
-                        <p><strong>Current work — CO<sub>2</sub> ice.</strong> I am developing experiments to examine how CO<sub>2</sub> ice porosity affects its infrared spectral properties, motivated in part by the interpretation of CO<sub>2</sub> observations and abundance estimates on Ganymede.</p>
-                    </div>
-                    <div class="link-box">
-                        <a href="https://arxiv.org/abs/2609.27031" target="_blank" rel="noopener noreferrer">Methyl formate paper</a>
-                        <a href="#" class="popup-modal-dismiss">Close</a>
-                    </div>
-                </div> <!-- /modal-01 -->
-
-                <!-- MODAL 2: JWST OBSERVATIONS -->
-                <div id="modal-02" class="popup-modal slider mfp-hide">
-                    <div class="media">
-                        <a class="research-figure-zoom"
-                           href="images/portfolio/jwst_obs.jpeg"
-                           target="_blank" rel="noopener noreferrer"
-                           title="Open full-size research figure">
-                            <img class="research-modal-image"
-                                 src="images/portfolio/jwst_obs.jpeg"
-                                 alt="Four-panel JWST MIRI optical-depth analysis and fitted ice components">
-                        </a>
-                    </div>
-                    <div class="description-box">
-                        <h4>JWST Observations</h4>
-                        <p><strong>Published work — CORINOS IV.</strong> I analyzed JWST/MIRI spectra of four Class 0 protostars to investigate weak SO<sub>2</sub> ice absorption near the stronger CH<sub>4</sub> band. Because the inferred SO<sub>2</sub> abundance depends strongly on continuum placement and the adopted laboratory ice spectrum, I developed a randomized baseline-fitting approach to propagate that uncertainty through the spectral fits. This analysis places bounds on SO<sub>2</sub> as a potential reservoir of volatile sulfur in protostellar ices.</p>
-                    </div>
-                    <div class="link-box">
-                        <a href="https://doi.org/10.3847/1538-4357/ae2c81" target="_blank" rel="noopener noreferrer">CORINOS IV paper</a>
-                        <a href="#" class="popup-modal-dismiss">Close</a>
-                    </div>
-                </div> <!-- /modal-02 -->
-
-                <!-- MODAL 3: CHEMICAL MODELING -->
-                <div id="modal-03" class="popup-modal slider mfp-hide">
-                    <div class="media">
-                        <a class="research-figure-zoom"
-                           href="images/portfolio/chemical_model_hcn_cn.jpeg"
-                           target="_blank" rel="noopener noreferrer"
-                           title="Open full-size research figure">
-                            <img class="research-modal-image"
-                                 src="images/portfolio/chemical_model_hcn_cn.jpeg"
-                                 alt="Modeled HCN and CN distributions as a function of external UV field">
-                        </a>
-                    </div>
-                    <div class="description-box">
-                        <h4>Chemical Modeling</h4>
-                        <p><strong>Published work — externally irradiated disk chemistry.</strong> With chemical models of protoplanetary disks exposed to moderate external UV fields (10–100 G<sub>0</sub>), I investigated how the surrounding stellar environment changes gas- and ice-phase abundances. The response depends on disk structure: the outer regions and tracers such as N<sub>2</sub>H<sup>+</sup>, C, and CS are affected more strongly, while the inner tens of au remain comparatively shielded. I also generated synthetic molecular-line predictions to explore observable signatures of irradiation.</p>
-                        <p><strong>Related modeling.</strong> I am investigating how updated molecular binding energies change freeze-out, snowline locations, and the resulting gas and ice chemistry.</p>
-                    </div>
-                    <div class="link-box">
-                        <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980..189G/abstract" target="_blank" rel="noopener noreferrer">Disk chemistry paper</a>
-                        <a href="#" class="popup-modal-dismiss">Close</a>
-                    </div>
-                </div> <!-- /modal-03 -->
-
-                <!-- MODAL 4: RADIATIVE TRANSFER -->
-                <div id="modal-04" class="popup-modal slider mfp-hide">
-                    <div class="media">
-                        <a class="research-figure-zoom"
-                           href="images/portfolio/radiative_transfer_ice_ratio_maps.jpeg"
-                           target="_blank" rel="noopener noreferrer"
-                           title="Open full-size research figure">
-                            <img class="research-modal-image"
-                                 src="images/portfolio/radiative_transfer_ice_ratio_maps.jpeg"
-                                 alt="Comparison of recovered ice distributions from radiative-transfer calculations">
-                        </a>
-                    </div>
-                    <div class="description-box">
-                        <h4>Radiative Transfer</h4>
-                        <p><strong>Current work — recovering disk ice signatures.</strong> I use RADMC-3D to generate synthetic observations of externally irradiated, edge-on protoplanetary disks and compare the ice absorption inferred from spectra with the underlying physical ice distributions. By varying disk size, extraction position, and irradiation, I am testing how scattering and viewing geometry can conceal or alter an environmental signature.</p>
-                        <p><strong>Next step — Orion silhouettes.</strong> I am extending these calculations toward silhouette disks, where diffuse nebular light is transmitted through the disk. Comparing this geometry with conventional scattered-light observations will help establish which features of the ice distribution can actually be recovered from JWST spectra.</p>
-                    </div>
-                    <div class="link-box">
-                        
-                        <a href="#" class="popup-modal-dismiss">Close</a>
-                    </div>
-                </div> <!-- /modal-04 -->
-                </div> <!-- /folio-wrapper -->
-            </div> <!-- /col-twelve -->
-        </div> <!-- /portfolio-content -->
-    </section> <!-- /portfolio -->
-
-
-    <!-- SCIENCE COMMUNICATION AND OUTREACH
-    ================================================== -->
-    <section id="outreach" style="padding: 7rem 0;">
-        <div class="row section-intro">
-            <div class="col-twelve">
-                <h5>Science Communication</h5>
-                <h1>Outreach &amp; Media</h1>
-                <p class="lead">Astrochem Coffee Podcast</p>
-                <p>
-                    In the January 2025 episode, I joined the <em>Single-Origin Brew</em>
-                    segment to discuss my research on how moderate external UV irradiation
-                    affects protoplanetary disk chemistry.
-                </p>
-                <a class="button" href="https://shows.acast.com/astrochem-coffee/episodes/january-2025-its-a-sulfurous-universe-man"
-                   target="_blank" rel="noopener noreferrer">Listen to the episode</a>
-            </div>
-        </div>
-    </section> <!-- /outreach -->
-
-    <!-- CONTACT SECTION
-    ================================================== -->
-    <section id="contact">
-
-        <div class="row contact-info">
-
-
-            <!-- Location -->
-            <div class="col-four tab-full">
-
-                <div class="icon">
-                    <i class="icon-pin"></i>
-                </div>
-
-                <h5>Where to find me</h5>
-
-                <p>
-                    Astronomy Building<br>
-                    530 McCormick Road<br>
-                    Charlottesville, VA 22904<br>
-                    USA
-                </p>
-
-            </div>
-
-
-            <!-- Email -->
-            <div class="col-four tab-full collapse">
-
-                <div class="icon">
-                    <i class="icon-mail"></i>
-                </div>
-
-                <h5>Email Me At</h5>
-
-                <p>
-                    rachel.gross86_AT_gmail.com<br>
-                    reg4ff_AT_virginia.edu
-                </p>
-
-            </div>
-
-
-        </div> <!-- /contact-info -->
-
-    </section> <!-- /contact -->
-
-
-
-    <!-- FOOTER
-    ================================================== -->
-    <footer>
-
-        <div class="row">
-
-            <div class="col-six tab-full pull-right social">
-            </div>
-
-            <div class="col-six tab-full">
-
-                <div class="copyright">
-
-                    <span>
-                        Original design by
-                        <a href="http://www.styleshout.com/">
-                            styleshout
-                        </a>
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <!-- Back to Top Button -->
-            <div id="go-top">
-
-                <a class="smoothscroll"
-                   title="Back to Top"
-                   href="#top">
-
-                    <i class="fa fa-long-arrow-up"></i>
-
-                </a>
-
-            </div>
-
-        </div> <!-- /row -->
-
-    </footer>
-
-
-
-    <!-- PRELOADER
-    ================================================== -->
-    <div id="preloader">
-
-        <div id="loader"></div>
-
+  <!-- MAIN NAVIGATION -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="wrap nav-inner">
+      <a class="brand" href="#top">Rachel Gross</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#current-research">Current Research</a>
+        <a href="#published-research">Published Research</a>
+        <a href="#publications">Publications</a>
+        <a href="#outreach">Outreach</a>
+        <a href="#contact">Contact</a>
+        <a class="nav-cv" href="CV_RG_updated.pdf" target="_blank" rel="noopener noreferrer">CV ↗</a>
+      </div>
     </div>
+  </nav>
 
+  <!-- COMPACT INTRODUCTION / KECK PHOTO -->
+  <header class="hero" id="top">
+    <div class="hero-copy">
+      <p class="eyebrow">Astrochemistry &amp; Planet Formation</p>
+      <h1>Rachel Erin Gross</h1>
+      <p class="tagline">ICI Postdoctoral Fellow · Department of Astronomy · University of Virginia</p>
+    </div>
+    <figure class="hero-image">
+      <a href="images/keck_sunset.jpeg" target="_blank" rel="noopener noreferrer" aria-label="Open Keck photograph full size">
+        <img src="images/keck_sunset.jpeg" alt="Keck Observatory domes above the clouds beneath an orange sunset" fetchpriority="high">
+      </a>
+      <figcaption>Keck Observatory, Maunakea</figcaption>
+    </figure>
+  </header>
 
+  <!-- ABOUT: RESEARCH INTEREST AND PERSONAL INTRODUCTION -->
+  <section class="section section--white" id="about">
+    <div class="wrap">
+      <p class="eyebrow">About</p>
+      <h2 class="section-title">A little about me</h2>
+      <div class="about-grid">
+        <img class="portrait" src="images/profile_pic.jpeg" alt="Portrait of Rachel Gross">
+        <div class="about-copy">
+          <h3>Rachel Gross</h3>
+          <p class="about-role">ICI Postdoctoral Fellow · University of Virginia</p>
+          <p>I work with Prof. Ilse Cleeves and Prof. Catherine Dukes at the University of Virginia, where I received my Ph.D. in Chemistry in May 2026.</p>
+          <p>At the center of my research are astrophysical ices: what they contain, how their composition and structure change with their surroundings, and when molecules desorb into the gas as stars and planets form. Gas- and ice-phase chemistry are closely connected, so I also study the molecules in the gas and the disk conditions that shape their distributions.</p>
+          <p>I bring together cryogenic laboratory experiments, astronomical spectroscopy, chemical modeling, and radiative transfer. A recurring question across these projects is how to distinguish changes in the underlying chemistry from changes in the way we observe it.</p>
+          <div class="link-row" aria-label="Academic links">
+            <a class="button button--solid" href="CV_RG_updated.pdf" target="_blank" rel="noopener noreferrer">Curriculum vitae ↗</a>
+            <a class="button" href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-0477-6047" target="_blank" rel="noopener noreferrer">All publications ↗</a>
+            <a class="button" href="https://orcid.org/0000-0002-0477-6047" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
+            <a class="button" href="mailto:reg4ff@virginia.edu">Email ↗</a>
+          </div>
+        </div>
+      </div>
+      <div class="personal">
+        <h3>Beyond research</h3>
+        <p>Before entering academia, I spent over a decade as a professional equestrian athlete, competing in dressage and three-day eventing. Outside of research, I enjoy hiking, trail running, and playing the cello.</p>
+      </div>
+    </div>
+  </section>
 
-    <!-- JAVASCRIPT
-    ================================================== -->
-    <script src="js/jquery-2.1.3.min.js"></script>
-    <script src="js/plugins.js"></script>
-    <script src="js/main.js"></script>
+  <!-- CURRENT WORK. THESE ARE NOT PRESENTED AS FINISHED / PUBLISHED RESULTS. -->
+  <section class="section section--soft" id="current-research">
+    <div class="wrap">
+      <div class="section-intro">
+        <p class="eyebrow">What I'm working on</p>
+        <h2 class="section-title">Current Research</h2>
+        <p>My current projects connect gas and ice chemistry to the physical conditions of planet-forming environments and to the spectra we can recover from them.</p>
+      </div>
 
+      <article class="feature">
+        <div class="feature-text">
+          <span class="feature-status">Ongoing · Radiative transfer</span>
+          <h3>When does disk ice leave an observable signature?</h3>
+          <p>A chemical model tells us where molecules are in a disk, but a telescope measures light, not the underlying molecular inventory. The observable ice bands depend on geometry, scattering, optical depth, and which part of the disk contributes to an extracted spectrum.</p>
+          <p>I generate synthetic images and spectra of edge-on disks exposed to different external UV fields and compare the recovered H<sub>2</sub>O, CO<sub>2</sub>, and CO ice signatures with the model's physical abundances. I am also extending this work toward Orion silhouette-disk geometries, where nebular background light passes through the disk and provides a different view of its ice.</p>
+          <div class="feature-cta">
+            <a class="button" href="images/portfolio/radiative_transfer_ice_ratio_maps.jpeg" target="_blank" rel="noopener noreferrer">View additional ice-ratio maps ↗</a>
+          </div>
+        </div>
+        <figure class="feature-media">
+          <a href="images/portfolio/radiative_transfer_apertures.jpeg" target="_blank" rel="noopener noreferrer" title="Open figure full size">
+            <img src="images/portfolio/radiative_transfer_apertures.jpeg" alt="Synthetic edge-on disk continuum image with aperture locations and extracted spectra" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Synthetic observations extracted from different regions of an edge-on disk. Click the figure to enlarge it.</figcaption>
+        </figure>
+      </article>
+
+      <article class="feature feature--reverse">
+        <div class="feature-text">
+          <span class="feature-status">In development · Laboratory astrochemistry</span>
+          <h3>How does CO<sub>2</sub> ice structure affect its spectrum?</h3>
+          <p>My current laboratory work is developing experiments to test how CO<sub>2</sub> ice porosity influences its infrared spectral properties and the abundances inferred from those spectra, motivated in part by observations of CO<sub>2</sub> on Ganymede.</p>
+          <p>This project builds on my experience developing, operating, and troubleshooting cryogenic ultra-high-vacuum instrumentation. I am also contributing to the laboratory's relocation and re-establishment in a new facility.</p>
+        </div>
+        <figure class="feature-media">
+          <a href="images/portfolio/uhv_chamber_closeup.jpeg" target="_blank" rel="noopener noreferrer" title="Open chamber photo full size">
+            <img class="photo" src="images/portfolio/uhv_chamber_closeup.jpeg" alt="Close-up photograph of the cryogenic ultra-high-vacuum ice chamber" loading="lazy" decoding="async">
+          </a>
+          <figcaption>UVA's cryogenic ice chamber. <a href="images/portfolio/lab_chamber_cad.jpeg" target="_blank" rel="noopener noreferrer">View the instrument CAD diagram ↗</a></figcaption>
+        </figure>
+      </article>
+
+      <aside class="research-note">
+        <h3>Ongoing observational work</h3>
+        <p>Separately from the synthetic-disk modeling, I am examining archival JWST/NIRSpec observations of Orion silhouette disks and approaches for measuring ice absorption relative to the local nebular background. This is observational analysis; the radiative-transfer experiments described above test how to interpret such measurements.</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- COMPLETED / PUBLISHED RESEARCH -->
+  <section class="section section--white" id="published-research">
+    <div class="wrap">
+      <div class="section-intro">
+        <p class="eyebrow">Selected studies</p>
+        <h2 class="section-title">Published Research</h2>
+        <p>Three examples from my doctoral work illustrate how laboratory measurements, JWST spectra, and gas–ice chemical models address different parts of the same larger picture.</p>
+      </div>
+
+      <article class="feature">
+        <div class="feature-text">
+          <span class="feature-status">Laboratory experiments · 2026</span>
+          <h3>Why does the ice beneath methyl formate matter?</h3>
+          <p>Methyl formate is an organic molecule detected in star-forming regions, but its desorption cannot be described by considering the molecule alone. I used temperature-programmed desorption experiments to investigate methyl formate deposited on water- and methanol-rich ice substrates, comparing how the substrate and coverage change its desorption behavior.</p>
+          <p>We found that methanol-rich ice mantles lower methyl formate binding energies relative to water-rich substrates. This provides experimentally grounded constraints for models that determine when complex organics move from icy grains into the gas.</p>
+          <div class="feature-cta">
+            <a class="button button--solid" href="https://arxiv.org/abs/2609.27031" target="_blank" rel="noopener noreferrer">Read the methyl formate paper ↗</a>
+          </div>
+        </div>
+        <figure class="feature-media">
+          <a href="images/portfolio/mf_desorption_data.jpeg" target="_blank" rel="noopener noreferrer" title="Open methyl formate desorption figure full size">
+            <img src="images/portfolio/mf_desorption_data.jpeg" alt="Methyl formate temperature-programmed desorption data for different water- and methanol-ice substrates" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Methyl formate desorption from different astrophysical ice analogues.</figcaption>
+        </figure>
+      </article>
+
+      <article class="feature feature--reverse">
+        <div class="feature-text">
+          <span class="feature-status">JWST spectroscopy · CORINOS IV</span>
+          <h3>How confidently can we measure a weak ice feature?</h3>
+          <p>Weak molecular ice bands in JWST spectra often overlap with stronger absorptions. In CORINOS IV, I analyzed the 7–8 μm region of four Class 0 protostars, focusing on the blended SO<sub>2</sub> feature and the uncertainties introduced by the choice of continuum.</p>
+          <p>I developed a Monte Carlo baseline-fitting approach that samples more than 50 continuum realizations per source, then combines the resulting optical-depth spectra with laboratory ice components. The study shows why uncertainty in continuum placement must be accounted for when deriving abundances from weak ice bands.</p>
+          <div class="feature-cta">
+            <a class="button button--solid" href="https://doi.org/10.3847/1538-4357/ae2c81" target="_blank" rel="noopener noreferrer">Read CORINOS IV ↗</a>
+          </div>
+        </div>
+        <figure class="feature-media">
+          <a href="images/portfolio/jwst_obs.jpeg" target="_blank" rel="noopener noreferrer" title="Open JWST spectral-fitting figure full size">
+            <img src="images/portfolio/jwst_obs.jpeg" alt="Four panels showing laboratory-component fits to JWST MIRI ice absorption spectra" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Laboratory-component fits to JWST/MIRI absorption spectra. <a href="images/portfolio/jwst_h2_emission_maps.jpeg" target="_blank" rel="noopener noreferrer">View an additional JWST figure ↗</a></figcaption>
+        </figure>
+      </article>
+
+      <article class="feature">
+        <div class="feature-text">
+          <span class="feature-status">Chemical modeling · 2025</span>
+          <h3>What changes when a disk forms near massive stars?</h3>
+          <p>Protoplanetary disks often form in clustered environments, where nearby stars expose them to external ultraviolet radiation. I modeled the response of gas- and ice-phase chemistry to moderate external UV fields across disks with different physical structures, examining tracers including N<sub>2</sub>H<sup>+</sup>, HCO<sup>+</sup>, C, and CS.</p>
+          <p>Coupling those chemical models to synthetic molecular-line calculations showed how external irradiation can alter observable gas-phase tracers, particularly in more exposed disk regions. This work also motivates my continued investigation of the connection between molecular binding energies, volatile partitioning, and observable chemistry.</p>
+          <div class="feature-cta">
+            <a class="button button--solid" href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980..189G/abstract" target="_blank" rel="noopener noreferrer">Read the disk chemistry paper ↗</a>
+          </div>
+        </div>
+        <figure class="feature-media">
+          <a href="images/portfolio/chemical_model_line_profiles.jpeg" target="_blank" rel="noopener noreferrer" title="Open molecular line-profile figure full size">
+            <img src="images/portfolio/chemical_model_line_profiles.jpeg" alt="Synthetic molecular-line profiles for several gas-phase tracers under different external UV fields" loading="lazy" decoding="async">
+          </a>
+          <figcaption>Example synthetic line profiles across modeled external UV fields. <a href="images/portfolio/chemical_model_hcn_cn.jpeg" target="_blank" rel="noopener noreferrer">View HCN/CN model maps ↗</a></figcaption>
+        </figure>
+      </article>
+    </div>
+  </section>
+
+  <!-- SHORT PUBLICATION LIST, WITH A LINK TO THE FULL ADS RECORD -->
+  <section class="section section--soft" id="publications">
+    <div class="wrap">
+      <p class="eyebrow">Research output</p>
+      <h2 class="section-title">Selected Publications</h2>
+      <ul class="pub-list">
+        <li><span class="pub-year">2026</span> <strong>Gross, R. E.</strong> et al., <a href="https://arxiv.org/abs/2609.27031" target="_blank" rel="noopener noreferrer">Laboratory Evidence that Methanol-Rich Ice Mantles Lower Methyl Formate Binding Energies</a> (accepted; arXiv:2609.27031).</li>
+        <li><span class="pub-year">2026</span> <strong>Gross, R. E.</strong> et al., <a href="https://doi.org/10.3847/1538-4357/ae2c81" target="_blank" rel="noopener noreferrer">CORINOS IV: Quantifying Baseline-fitting Uncertainties in SO<sub>2</sub> Ice Measurements with JWST/MIRI</a> (ApJ).</li>
+        <li><span class="pub-year">2025</span> <strong>Gross, R. E.</strong> &amp; Cleeves, L. I., <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980..189G/abstract" target="_blank" rel="noopener noreferrer">Modeling the Impact of Moderate External UV Irradiation on Disk Chemistry</a> (ApJ, 980, 189).</li>
+      </ul>
+      <div class="link-row">
+        <a class="button button--solid" href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-0477-6047" target="_blank" rel="noopener noreferrer">Full publication list on ADS ↗</a>
+        <a class="button" href="CV_RG_updated.pdf" target="_blank" rel="noopener noreferrer">Download CV ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SCIENCE COMMUNICATION -->
+  <section class="section section--white" id="outreach">
+    <div class="wrap outreach-row">
+      <div>
+        <p class="eyebrow">Science communication</p>
+        <h2 class="section-title">Outreach &amp; Media</h2>
+        <p>I joined the <em>Single-Origin Brew</em> segment of the January 2025 <em>Astrochem Coffee</em> podcast to discuss my work on external UV irradiation and protoplanetary disk chemistry.</p>
+        <p>I also participate in hands-on astronomy outreach, including laboratory tours and educational activities such as Radio JOVE.</p>
+      </div>
+      <a class="button button--solid" href="https://shows.acast.com/astrochem-coffee/episodes/january-2025-its-a-sulfurous-universe-man" target="_blank" rel="noopener noreferrer">Listen to the episode ↗</a>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="section section--soft" id="contact">
+    <div class="wrap">
+      <p class="eyebrow">Get in touch</p>
+      <h2 class="section-title">Contact</h2>
+      <div class="contact-grid">
+        <div>
+          <h3>University of Virginia</h3>
+          <p>Department of Astronomy<br>530 McCormick Road<br>Charlottesville, VA 22904, USA</p>
+        </div>
+        <div>
+          <h3>Online</h3>
+          <p><a href="mailto:reg4ff@virginia.edu">reg4ff@virginia.edu</a><br>
+            <a href="https://orcid.org/0000-0002-0477-6047" target="_blank" rel="noopener noreferrer">ORCID</a> ·
+            <a href="https://github.com/rachel-e-gross" target="_blank" rel="noopener noreferrer">GitHub</a> ·
+            <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-0477-6047" target="_blank" rel="noopener noreferrer">NASA ADS</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site-footer">
+    <div class="wrap"><span>© 2026 Rachel Gross</span><span>Website adapted from an earlier Styleshout layout.</span></div>
+  </footer>
 </body>
-
 </html>
