@@ -54,8 +54,8 @@
             min-height: 0 !important;
             padding: 32px 18px 25px !important;
             background: linear-gradient(90deg,
-                rgba(19,15,20,.60), rgba(19,15,20,.40)),
-                url("images/sunset-banner.jpeg") center 75% / cover no-repeat !important;
+                rgba(19,15,20,.45), rgba(19,15,20,.25)),
+                url("images/keck_sunset.jpeg") center 42% / cover no-repeat !important;
             text-align: center;
         }
         #intro .intro-overlay {
@@ -212,7 +212,7 @@
             width: 100%;
             color: #fff;
         }
-        /* Show YOUR own photographs and scientific figures on the four cards. */
+        /* Homepage card photos: these can be changed independently of modal images below. */
         #portfolio .research-tile {
             justify-content: flex-end;
             padding: 15px;
@@ -227,31 +227,32 @@
             padding: 9px 14px;
         }
         .research-lab {
-            background: #2d2630 url("images/portfolio/lab_astrochem.jpeg") center 40% / cover no-repeat;
+            background: #2d2630 url("images/portfolio/uhv_chamber_closeup.jpeg") center / cover no-repeat;
         }
         .research-jwst {
-            background: #fff url("images/portfolio/jwst_obs.jpeg") center / contain no-repeat;
+            background: #fff url("images/portfolio/jwst_h2_emission_maps.jpeg") center / contain no-repeat;
         }
         .research-chem {
-            background: #fff url("images/portfolio/chemical_modeling.jpeg") center / contain no-repeat;
+            background: #fff url("images/portfolio/chemical_model_line_profiles.jpeg") center / contain no-repeat;
         }
         .research-rt {
-            background: #fff url("images/portfolio/radiative_transfer.jpeg") center / contain no-repeat;
+            background: #fff url("images/portfolio/radiative_transfer_apertures.jpeg") center / contain no-repeat;
         }
-        /* Full figures in the project popups, rather than tightly cropping them. */
-        #portfolio .research-modal-image {
+        /* Keep the two short research paragraphs readable in the existing popups. */
+        #portfolio .description-box p { line-height: 1.55; margin-bottom: 11px; }
+        #portfolio .description-box p strong { color: #633e75; }
+
+        /* Modal figures are shown whole, not cropped. Click to open them full-size. */
+        #portfolio .research-figure-zoom { display: block; cursor: zoom-in; }
+        #portfolio .research-modal-image,
+        #portfolio .research-modal-image.lab-photo {
             display: block;
             box-sizing: border-box;
             width: 100%;
             height: auto;
-            max-height: 330px;
+            max-height: min(60vh, 520px);
             object-fit: contain;
             background: #fff;
-        }
-        #portfolio .research-modal-image.lab-photo {
-            height: 300px;
-            object-fit: cover;
-            object-position: center;
         }
         #portfolio .research-tile { box-sizing: border-box; }
         @media only screen and (max-width: 700px) {
@@ -321,15 +322,17 @@
                                 I received my Ph.D. in Chemistry from UVA in May 2026.
                             </p>
                             <p>
-                                My research examines gas- and ice-phase chemistry in star- and
-                                planet-forming environments, particularly how irradiation,
-                                temperature, and physical structure shape molecular abundances
-                                and the volatile material available for planet formation.
+                                I am particularly interested in astrophysical ices: how their
+                                composition and structure change with their surroundings, when
+                                molecules desorb into the gas, and which icy materials survive
+                                into planet-forming disks. Because gas and ice are chemically
+                                connected, I also study gas-phase abundances and molecular tracers.
                             </p>
                             <p>
-                                I combine cryogenic laboratory experiments, JWST observations,
-                                chemical modeling, and radiative transfer to connect underlying
-                                physical and chemical processes with observable molecular signatures.
+                                I bring together cryogenic laboratory experiments, JWST
+                                spectroscopy, chemical modeling, and radiative transfer to
+                                connect the physical chemistry of gas and ice with what we can
+                                actually infer from astronomical observations.
                             </p>
                             <div class="about-links" aria-label="Academic links">
                                 <a href="CV_RG_updated.pdf" target="_blank" rel="noopener noreferrer">Curriculum vitae ↗</a>
@@ -378,7 +381,7 @@
                             <div class="folio-item-table">
                                 <div class="folio-item-cell">
                                     <h3 class="folio-title">Laboratory Astrochemistry</h3>
-                                    <span class="folio-types">Ultra-high-vacuum ice experiments</span>
+                                    <span class="folio-types">Desorption, ice spectroscopy &amp; instrumentation</span>
                                 </div>
                             </div>
                         </a>
@@ -396,7 +399,7 @@
                             <div class="folio-item-table">
                                 <div class="folio-item-cell">
                                     <h3 class="folio-title">JWST Observations</h3>
-                                    <span class="folio-types">Ice spectroscopy with MIRI</span>
+                                    <span class="folio-types">Measuring weak ice features with JWST/MIRI</span>
                                 </div>
                             </div>
                         </a>
@@ -414,7 +417,7 @@
                             <div class="folio-item-table">
                                 <div class="folio-item-cell">
                                     <h3 class="folio-title">Chemical Modeling</h3>
-                                    <span class="folio-types">Gas and ice chemistry in irradiated disks</span>
+                                    <span class="folio-types">External UV, gas–ice chemistry &amp; tracers</span>
                                 </div>
                             </div>
                         </a>
@@ -432,22 +435,30 @@
                             <div class="folio-item-table">
                                 <div class="folio-item-cell">
                                     <h3 class="folio-title">Radiative Transfer</h3>
-                                    <span class="folio-types">Synthetic observations and observability</span>
+                                    <span class="folio-types">Disk geometry, scattering &amp; ice observability</span>
                                 </div>
                             </div>
                         </a>
                     </div>
                 </div> <!-- /folio-item -->
 
-                <!-- PROJECT DETAILS: OPENED BY CLICKING THE CARDS -->
+                <!-- PROJECT DETAILS: Each modal uses a different, full-size figure. -->
                 <!-- MODAL 1: LABORATORY ASTROCHEMISTRY -->
                 <div id="modal-01" class="popup-modal slider mfp-hide">
                     <div class="media">
-                        <img class="research-modal-image lab-photo" src="images/portfolio/lab_astrochem.jpeg" alt="Photograph of Rachel working with the ultra-high-vacuum chamber">
+                        <a class="research-figure-zoom"
+                           href="images/portfolio/mf_desorption_data.jpeg"
+                           target="_blank" rel="noopener noreferrer"
+                           title="Open full-size research figure">
+                            <img class="research-modal-image"
+                                 src="images/portfolio/mf_desorption_data.jpeg"
+                                 alt="Methyl formate temperature-programmed desorption measurements on water and methanol ice substrates">
+                        </a>
                     </div>
                     <div class="description-box">
                         <h4>Laboratory Astrochemistry</h4>
-                        <p>I investigate the physical and chemical behavior of astrophysical ice analogues using cryogenic ultra-high-vacuum experiments. My research examines how ice composition and structure affect molecular desorption and infrared spectral properties, including experiments on methyl formate and developing studies of CO<sub>2</sub> ice porosity.</p>
+                        <p><strong>Published work — methyl formate desorption.</strong> Complex organic molecules are often assumed to remain associated with H<sub>2</sub>O-rich ice until the water matrix sublimates, yet methyl formate is observed in gas at lower temperatures. Using temperature-programmed desorption experiments, we measured its behavior on amorphous and crystalline H<sub>2</sub>O and CH<sub>3</sub>OH substrates. We found weaker binding on CH<sub>3</sub>OH ice, with characteristic desorption near 85 K rather than roughly 95–100 K on H<sub>2</sub>O substrates. The result shows how the surrounding ice can affect when complex organics enter the gas, without requiring bulk water-ice sublimation.</p>
+                        <p><strong>Current work — CO<sub>2</sub> ice.</strong> I am developing experiments to examine how CO<sub>2</sub> ice porosity affects its infrared spectral properties, motivated in part by the interpretation of CO<sub>2</sub> observations and abundance estimates on Ganymede.</p>
                     </div>
                     <div class="link-box">
                         <a href="https://arxiv.org/abs/2609.27031" target="_blank" rel="noopener noreferrer">Methyl formate paper</a>
@@ -458,11 +469,18 @@
                 <!-- MODAL 2: JWST OBSERVATIONS -->
                 <div id="modal-02" class="popup-modal slider mfp-hide">
                     <div class="media">
-                        <img class="research-modal-image " src="images/portfolio/jwst_obs.jpeg" alt="Four-panel JWST MIRI ice spectrum fitting results">
+                        <a class="research-figure-zoom"
+                           href="images/portfolio/jwst_obs.jpeg"
+                           target="_blank" rel="noopener noreferrer"
+                           title="Open full-size research figure">
+                            <img class="research-modal-image"
+                                 src="images/portfolio/jwst_obs.jpeg"
+                                 alt="Four-panel JWST MIRI optical-depth analysis and fitted ice components">
+                        </a>
                     </div>
                     <div class="description-box">
                         <h4>JWST Observations</h4>
-                        <p>I use JWST spectroscopy to investigate molecular ices in protostellar and protoplanetary environments. For CORINOS IV, I developed a Monte Carlo baseline-fitting approach to quantify uncertainties in weak, blended SO<sub>2</sub> ice absorption features in MIRI spectra. Current work includes developing NIRSpec studies of ice survival in Orion silhouette disks.</p>
+                        <p><strong>Published work — CORINOS IV.</strong> I analyzed JWST/MIRI spectra of four Class 0 protostars to investigate weak SO<sub>2</sub> ice absorption near the stronger CH<sub>4</sub> band. Because the inferred SO<sub>2</sub> abundance depends strongly on continuum placement and the adopted laboratory ice spectrum, I developed a randomized baseline-fitting approach to propagate that uncertainty through the spectral fits. This analysis places bounds on SO<sub>2</sub> as a potential reservoir of volatile sulfur in protostellar ices.</p>
                     </div>
                     <div class="link-box">
                         <a href="https://doi.org/10.3847/1538-4357/ae2c81" target="_blank" rel="noopener noreferrer">CORINOS IV paper</a>
@@ -473,11 +491,19 @@
                 <!-- MODAL 3: CHEMICAL MODELING -->
                 <div id="modal-03" class="popup-modal slider mfp-hide">
                     <div class="media">
-                        <img class="research-modal-image " src="images/portfolio/chemical_model_hcn_cn.jpeg" alt="Disk chemical model comparison for external UV and binding energies">
+                        <a class="research-figure-zoom"
+                           href="images/portfolio/chemical_model_hcn_cn.jpeg"
+                           target="_blank" rel="noopener noreferrer"
+                           title="Open full-size research figure">
+                            <img class="research-modal-image"
+                                 src="images/portfolio/chemical_model_hcn_cn.jpeg"
+                                 alt="Modeled HCN and CN distributions as a function of external UV field">
+                        </a>
                     </div>
                     <div class="description-box">
                         <h4>Chemical Modeling</h4>
-                        <p>I develop astrochemical models to study how external UV irradiation, disk structure, and molecular binding energies affect gas- and ice-phase abundances in protoplanetary disks. This work connects physical environments with chemical tracers, snowline locations, and synthetic molecular-line observations.</p>
+                        <p><strong>Published work — externally irradiated disk chemistry.</strong> With chemical models of protoplanetary disks exposed to moderate external UV fields (10–100 G<sub>0</sub>), I investigated how the surrounding stellar environment changes gas- and ice-phase abundances. The response depends on disk structure: the outer regions and tracers such as N<sub>2</sub>H<sup>+</sup>, C, and CS are affected more strongly, while the inner tens of au remain comparatively shielded. I also generated synthetic molecular-line predictions to explore observable signatures of irradiation.</p>
+                        <p><strong>Related modeling.</strong> I am investigating how updated molecular binding energies change freeze-out, snowline locations, and the resulting gas and ice chemistry.</p>
                     </div>
                     <div class="link-box">
                         <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980..189G/abstract" target="_blank" rel="noopener noreferrer">Disk chemistry paper</a>
@@ -488,11 +514,19 @@
                 <!-- MODAL 4: RADIATIVE TRANSFER -->
                 <div id="modal-04" class="popup-modal slider mfp-hide">
                     <div class="media">
-                        <img class="research-modal-image " src="images/portfolio/radiative_transfer.jpeg" alt="Synthetic edge-on disk images and extracted spectra">
+                        <a class="research-figure-zoom"
+                           href="images/portfolio/radiative_transfer_ice_ratio_maps.jpeg"
+                           target="_blank" rel="noopener noreferrer"
+                           title="Open full-size research figure">
+                            <img class="research-modal-image"
+                                 src="images/portfolio/radiative_transfer_ice_ratio_maps.jpeg"
+                                 alt="Comparison of recovered ice distributions from radiative-transfer calculations">
+                        </a>
                     </div>
                     <div class="description-box">
                         <h4>Radiative Transfer</h4>
-                        <p>I use radiative-transfer calculations to investigate how molecular signatures are shaped by the paths light takes through a disk. By constructing synthetic observations of edge-on and silhouette disks, I examine how scattering, geometry, and spectral extraction affect the recovery of ice absorption and observable environmental signatures. This work is ongoing.</p>
+                        <p><strong>Current work — recovering disk ice signatures.</strong> I use RADMC-3D to generate synthetic observations of externally irradiated, edge-on protoplanetary disks and compare the ice absorption inferred from spectra with the underlying physical ice distributions. By varying disk size, extraction position, and irradiation, I am testing how scattering and viewing geometry can conceal or alter an environmental signature.</p>
+                        <p><strong>Next step — Orion silhouettes.</strong> I am extending these calculations toward silhouette disks, where diffuse nebular light is transmitted through the disk. Comparing this geometry with conventional scattered-light observations will help establish which features of the ice distribution can actually be recovered from JWST spectra.</p>
                     </div>
                     <div class="link-box">
                         
