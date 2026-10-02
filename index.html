@@ -8,10 +8,10 @@
     ================================================== -->
     <meta charset="utf-8">
 
-    <title>Rachel Gross</title>
+    <title>Rachel Gross | Astrochemistry &amp; Planet Formation | University of Virginia</title>
 
     <meta name="description"
-          content="Rachel Gross | Astrochemist and ICI Postdoctoral Fellow at the University of Virginia.">
+          content="Rachel Gross (R. E. Gross) is an ICI Postdoctoral Fellow at the University of Virginia researching gas- and ice-phase astrochemistry through laboratory experiments, JWST observations, chemical modeling, and radiative transfer.">
 
     <meta name="author" content="Rachel Gross">
 
@@ -41,25 +41,168 @@
     <!-- Favicon -->
     <link rel="icon" type="image/png" href="favicon.png">
 
-    <!-- Temporary homepage and research-card styling.
-         Kept here so only index.html needs updating. -->
+    <!-- Compact sunset header and two-column About section.
+         Styling is kept in this file so custom.css does not need editing. -->
     <style>
-        #intro {
-            background: linear-gradient(125deg, #121b29 0%, #30243e 55%, #173540 100%) !important;
-            background-image: linear-gradient(125deg, #121b29 0%, #30243e 55%, #173540 100%) !important;
+        /* Compact orange-sunset banner, replacing the full-screen intro */
+        html body #intro {
+            box-sizing: border-box;
+            display: block !important;
+            position: relative;
+            width: 100%;
+            height: 210px !important;
+            min-height: 0 !important;
+            padding: 32px 18px 25px !important;
+            background: linear-gradient(90deg,
+                rgba(19,15,20,.60), rgba(19,15,20,.40)),
+                url("images/sunset-banner.jpeg") center 75% / cover no-repeat !important;
+            text-align: center;
         }
         #intro .intro-overlay {
-            background: rgba(9, 13, 25, 0.15) !important;
-            opacity: 1;
+            position: absolute;
+            inset: 0;
+            width: 100%; height: 100%;
+            background: rgba(19,15,20,.08) !important;
+            opacity: 1 !important;
         }
-        #intro h1 { text-shadow: 0 2px 14px rgba(0,0,0,0.15); }
-        #intro .intro-position { max-width: 900px; margin-left: auto; margin-right: auto; }
-        #about .about-summary {
-            max-width: 830px;
-            margin: 24px auto 0;
+        #intro .intro-content {
+            display: block !important;
+            position: relative !important;
+            width: 100%;
+            margin: 0 auto !important;
+            padding: 0 !important;
+            -webkit-transform: none !important;
+            transform: none !important;
+            vertical-align: initial !important;
+        }
+        #intro .intro-content h1 {
+            margin: 8px auto 7px !important;
+            font-size: clamp(37px, 4.2vw, 62px) !important;
+            line-height: 1.14 !important;
+            letter-spacing: -.02em;
+            color: #fff !important;
+            text-shadow: 0 2px 16px rgba(0,0,0,.55);
+        }
+        #intro .header-kicker {
+            display: block;
+            margin: 0;
+            color: #fff4e9;
+            font-family: inherit;
+            font-size: 1.23rem;
+            font-weight: 600;
+            letter-spacing: .15em;
+            text-transform: uppercase;
+        }
+        #intro .header-role {
+            display: block;
+            margin: 5px auto 0 !important;
+            color: #fff7ef;
+            font-size: 1.3rem !important;
+            line-height: 1.5;
+            letter-spacing: .08em;
+            text-shadow: 0 1px 8px rgba(0,0,0,.6);
+        }
+        /* About is the real landing-page content, not another full-screen panel. */
+        html body #about {
+            padding: 46px 20px 56px !important;
+            background: #fff;
+        }
+        #about .about-container {
+            max-width: 1010px;
+            margin: 0 auto;
+        }
+        #about .about-kicker {
+            margin: 0 0 5px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: .18em;
+            text-transform: uppercase;
+            color: #825777;
+        }
+        #about h1 {
+            margin: 0 0 25px !important;
+            line-height: 1.2;
             text-align: left;
         }
-        #about .about-summary p { font-size: 1.8rem; line-height: 1.8; }
+        #about .about-grid {
+            display: grid;
+            grid-template-columns: 220px minmax(0,1fr);
+            gap: 42px;
+            align-items: start;
+        }
+        #about .about-portrait img {
+            display: block;
+            box-sizing: border-box;
+            margin: 0 !important;
+            width: 220px;
+            height: 220px;
+            max-width: 100%;
+            float: none !important;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+        }
+        #about .about-bio h2 {
+            margin: 0 0 3px;
+            font-size: 2.45rem;
+            line-height: 1.3;
+            color: #242424;
+        }
+        #about .about-role {
+            margin: 0 0 14px !important;
+            color: #76536f;
+            font-size: 1.28rem !important;
+            letter-spacing: .025em;
+            font-weight: 600;
+            line-height: 1.6;
+        }
+        #about .about-bio p,
+        #about .about-personal p {
+            text-align: left !important;
+            font-size: 1.61rem;
+            color: #494949;
+            line-height: 1.68;
+            margin: 0 0 12px;
+        }
+        #about a {color: #633e75;}
+        #about .about-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 20px 0 0;
+        }
+        #about .about-links a {
+            display: inline-block;
+            border: 1px solid #a58aa8;
+            color: #633e75;
+            text-decoration: none;
+            padding: 10px 14px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            line-height: 1.35;
+            letter-spacing: .06em;
+        }
+        #about .about-links a:hover,
+        #about .about-links a:focus {
+            color: white;
+            background: #633e75;
+        }
+        #about .about-personal {
+            display: grid;
+            grid-template-columns: 220px minmax(0,1fr);
+            gap: 42px;
+            margin-top: 30px;
+            padding-top: 21px;
+            border-top: 1px solid #e7e1e8;
+        }
+        #about .about-personal h3 {
+            margin: 0;
+            color: #633e75;
+            font-size: 1.65rem;
+        }
+        /* Keep Research close to About instead of leaving a huge empty gap. */
+        html body #portfolio { padding-top: 56px !important; }
+        /* Keep research tiles and all their existing paper links. */
         #portfolio .research-tile {
             display: flex;
             flex-direction: column;
@@ -69,31 +212,36 @@
             width: 100%;
             color: #fff;
         }
-        #portfolio .research-tile i { font-size: 62px; margin-bottom: 24px; opacity: 0.94; }
+        #portfolio .research-tile i { font-size: 62px; margin-bottom: 24px; opacity: .94; }
         #portfolio .research-tile span {
-            color: #fff;
-            font-size: 13px;
-            font-weight: 650;
-            letter-spacing: .15em;
-            text-align: center;
-            text-transform: uppercase;
+            color: #fff; font-size: 13px; font-weight: 650;
+            letter-spacing: .15em; text-align: center; text-transform: uppercase;
         }
         .research-lab { background: linear-gradient(135deg, #5b466b, #251d38); }
         .research-jwst { background: linear-gradient(135deg, #356373, #172e40); }
         .research-chem { background: linear-gradient(135deg, #64616f, #2b3446); }
         .research-rt { background: linear-gradient(135deg, #3c5168, #202837); }
         .research-modal-banner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 160px;
-            color: white;
-            font-size: 64px;
+            display: flex; align-items: center; justify-content: center;
+            height: 160px; color: white; font-size: 64px;
         }
         #portfolio .research-tile, .research-modal-banner { box-sizing: border-box; }
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 700px) {
+            html body #intro { height: 185px !important; padding-top: 27px !important; }
+            #intro .intro-content h1 { font-size: 4rem !important; }
+            #intro .header-role { font-size: 1.1rem !important; }
+            html body #about { padding: 34px 19px 46px !important; }
+            #about h1 { text-align: center; }
+            #about .about-grid, #about .about-personal {
+                grid-template-columns: minmax(0, 1fr);
+                gap: 18px;
+            }
+            #about .about-portrait img { margin: 0 auto !important; width: 180px; height: 180px; }
+            #about .about-bio h2, #about .about-role { text-align: center; }
+            #about .about-bio p, #about .about-personal p { font-size: 1.48rem; }
+            #about .about-links { justify-content: center; }
+            #about .about-personal { margin-top: 26px; }
             #portfolio .research-tile { min-height: 220px; }
-            #about .about-summary p { font-size: 1.6rem; }
         }
     </style>
 
@@ -110,121 +258,71 @@
     </header>
 
 
-    <!-- INTRO SECTION
+    <!-- COMPACT SUNSET HEADER
     ================================================== -->
-    <section id="intro">
-
+    <section id="intro" aria-label="Rachel Gross, astrochemist">
         <div class="intro-overlay"></div>
-
         <div class="intro-content">
-
-            <div class="row">
-
-                <div class="col-twelve">
-
-                    <h5>Greetings!</h5>
-
-                    <h1>I'm Rachel Gross</h1>
-
-                    <p class="intro-position">
-                        <span>
-                            ICI Postdoctoral Fellow |
-                            Department of Astronomy,
-                            University of Virginia
-                        </span>
-                    </p>
-
-                    <!-- About Me Button -->
-                    <a class="button stroke smoothscroll"
-                       href="#about"
-                       title="">
-                        About Me
-                    </a>
-
-                    <!-- CV Button -->
-                    <a class="button stroke"
-                       href="CV_RG_updated.pdf"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Download CV
-                    </a>
-
-                </div> <!-- /col-twelve -->
-
-            </div> <!-- /row -->
-
-        </div> <!-- /intro-content -->
-
-
-        <!-- Social Icons
-        ================================================== -->
-        <ul class="intro-social">
-
-            <!-- Email -->
-            <li>
-                <a href="mailto:reg4ff@virginia.edu">
-                    <i class="fa-solid fa-envelope fa-lg"></i>
-                </a>
-            </li>
-
-            <!-- ORCID -->
-            <li>
-                <a href="https://orcid.org/0000-0002-0477-6047"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    <i class="fa-brands fa-orcid fa-lg"></i>
-                </a>
-            </li>
-
-            <!-- GitHub -->
-            <li>
-                <a href="https://github.com/rachel-e-gross"
-                   target="_blank"
-                   rel="noopener noreferrer">
-                    <i class="fa-brands fa-github fa-lg"></i>
-                </a>
-            </li>
-
-        </ul>
-
+            <div class="row"><div class="col-twelve">
+                <span class="header-kicker">Astrochemistry &amp; Planet Formation</span>
+                <h1>Rachel Gross</h1>
+                <p class="header-role">ICI Postdoctoral Fellow &nbsp;|&nbsp; University of Virginia</p>
+            </div></div>
+        </div>
     </section> <!-- /intro -->
 
 
-    <!-- ABOUT SECTION
+    <!-- ABOUT SECTION: MAIN LANDING CONTENT
     ================================================== -->
     <section id="about">
-        <div class="row section-intro">
+        <div class="row">
             <div class="col-twelve">
-                <h1>A little about me</h1>
-                <div class="intro-info">
-                    <img src="images/profile_pic.jpeg" alt="Portrait of Rachel Gross">
-                    <p class="lead">
-                        I am an ICI Postdoctoral Fellow in the
-                        <a href="https://astronomy.as.virginia.edu/"
-                           target="_blank" rel="noopener noreferrer">Department of Astronomy</a>
-                        at the University of Virginia.
-                    </p>
-                </div> <!-- /intro-info -->
-                <div class="about-summary">
-                    <p>
-                        My research examines gas- and ice-phase chemistry in star- and
-                        planet-forming environments. I combine laboratory experiments,
-                        astronomical observations, chemical modeling, and radiative transfer
-                        to investigate how irradiation, temperature, and physical structure
-                        influence molecular abundances and volatile evolution.
-                    </p>
-                    <p>
-                        In the laboratory, I study the desorption and infrared properties
-                        of astrophysical ice analogues using cryogenic ultra-high-vacuum
-                        experiments. My observational work includes JWST spectroscopy of
-                        molecular ices in protostellar environments and developing studies
-                        of externally irradiated Orion silhouette disks. I also model disk
-                        gas and ice chemistry and use synthetic observations to investigate
-                        which chemical signatures can actually be recovered from astronomical data.
-                    </p>
-                </div> <!-- /about-summary -->
+                <div class="about-container">
+                    <p class="about-kicker">About</p>
+                    <h1>A little about me</h1>
+                    <div class="about-grid">
+                        <div class="about-portrait">
+                            <img src="images/profile_pic.jpeg" alt="Portrait of Rachel Gross">
+                        </div>
+                        <div class="about-bio">
+                            <h2>Rachel Gross</h2>
+                            <p class="about-role">ICI Postdoctoral Fellow · Department of Astronomy, University of Virginia</p>
+                            <p>
+                                I am an ICI Postdoctoral Fellow at the University of Virginia,
+                                working with Prof. Ilse Cleeves and Prof. Catherine Dukes.
+                                I received my Ph.D. in Chemistry from UVA in May 2026.
+                            </p>
+                            <p>
+                                My research examines gas- and ice-phase chemistry in star- and
+                                planet-forming environments, particularly how irradiation,
+                                temperature, and physical structure shape molecular abundances
+                                and the volatile material available for planet formation.
+                            </p>
+                            <p>
+                                I combine cryogenic laboratory experiments, JWST observations,
+                                chemical modeling, and radiative transfer to connect underlying
+                                physical and chemical processes with observable molecular signatures.
+                            </p>
+                            <div class="about-links" aria-label="Academic links">
+                                <a href="CV_RG_updated.pdf" target="_blank" rel="noopener noreferrer">Curriculum vitae ↗</a>
+                                <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-0477-6047"
+                                   target="_blank" rel="noopener noreferrer">Publications ↗</a>
+                                <a href="https://orcid.org/0000-0002-0477-6047" target="_blank" rel="noopener noreferrer">ORCID ↗</a>
+                                <a href="mailto:reg4ff@virginia.edu">Email ↗</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="about-personal">
+                        <h3>Beyond research</h3>
+                        <p>
+                            Before entering academia, I spent a decade as a professional equestrian
+                            athlete. I also enjoy mentoring students and making astronomy accessible
+                            through laboratory tours and hands-on outreach activities.
+                        </p>
+                    </div>
+                </div> <!-- /about-container -->
             </div> <!-- /col-twelve -->
-        </div> <!-- /section-intro -->
+        </div> <!-- /row -->
     </section> <!-- /about -->
 
 
@@ -518,3 +616,4 @@
 </body>
 
 </html>
+
