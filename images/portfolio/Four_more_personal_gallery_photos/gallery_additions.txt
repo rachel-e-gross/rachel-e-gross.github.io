@@ -1,0 +1,13 @@
+<!-- Add these four tiles inside your existing .personal-gallery-grid, just before its closing </div>. -->
+<a class="photo-thumb" href="images/portfolio/images/personal/trail_riding.jpeg">
+  <img src="images/portfolio/images/personal/trail_riding.jpeg" alt="Trail riding" loading="lazy">
+</a>
+<a class="photo-thumb" href="images/portfolio/images/personal/glacier_traverse.jpeg">
+  <img src="images/portfolio/images/personal/glacier_traverse.jpeg" alt="Glacier traverse" loading="lazy">
+</a>
+<a class="photo-thumb" href="images/portfolio/images/personal/japan_torii.jpeg">
+  <img src="images/portfolio/images/personal/japan_torii.jpeg" alt="Visit to a torii gate shrine in Japan" loading="lazy">
+</a>
+<a class="photo-thumb" href="images/portfolio/images/personal/mount_fuji.jpeg">
+  <img src="images/portfolio/images/personal/mount_fuji.jpeg" alt="Mount Fuji framed by flowering branches" loading="lazy">
+</a>
