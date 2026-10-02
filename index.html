@@ -212,20 +212,48 @@
             width: 100%;
             color: #fff;
         }
-        #portfolio .research-tile i { font-size: 62px; margin-bottom: 24px; opacity: .94; }
+        /* Show YOUR own photographs and scientific figures on the four cards. */
+        #portfolio .research-tile {
+            justify-content: flex-end;
+            padding: 15px;
+            background-repeat: no-repeat;
+        }
+        #portfolio .research-tile i { display: none; }
         #portfolio .research-tile span {
+            display: inline-block;
+            background: rgba(22,18,27,.77);
             color: #fff; font-size: 13px; font-weight: 650;
-            letter-spacing: .15em; text-align: center; text-transform: uppercase;
+            letter-spacing: .11em; text-align: center; text-transform: uppercase;
+            padding: 9px 14px;
         }
-        .research-lab { background: linear-gradient(135deg, #5b466b, #251d38); }
-        .research-jwst { background: linear-gradient(135deg, #356373, #172e40); }
-        .research-chem { background: linear-gradient(135deg, #64616f, #2b3446); }
-        .research-rt { background: linear-gradient(135deg, #3c5168, #202837); }
-        .research-modal-banner {
-            display: flex; align-items: center; justify-content: center;
-            height: 160px; color: white; font-size: 64px;
+        .research-lab {
+            background: #2d2630 url("images/portfolio/lab_astrochem.jpeg") center 40% / cover no-repeat;
         }
-        #portfolio .research-tile, .research-modal-banner { box-sizing: border-box; }
+        .research-jwst {
+            background: #fff url("images/portfolio/jwst_obs.jpeg") center / contain no-repeat;
+        }
+        .research-chem {
+            background: #fff url("images/portfolio/chemical_modeling.jpeg") center / contain no-repeat;
+        }
+        .research-rt {
+            background: #fff url("images/portfolio/radiative_transfer.jpeg") center / contain no-repeat;
+        }
+        /* Full figures in the project popups, rather than tightly cropping them. */
+        #portfolio .research-modal-image {
+            display: block;
+            box-sizing: border-box;
+            width: 100%;
+            height: auto;
+            max-height: 330px;
+            object-fit: contain;
+            background: #fff;
+        }
+        #portfolio .research-modal-image.lab-photo {
+            height: 300px;
+            object-fit: cover;
+            object-position: center;
+        }
+        #portfolio .research-tile { box-sizing: border-box; }
         @media only screen and (max-width: 700px) {
             html body #intro { height: 185px !important; padding-top: 27px !important; }
             #intro .intro-content h1 { font-size: 4rem !important; }
@@ -265,7 +293,7 @@
         <div class="intro-content">
             <div class="row"><div class="col-twelve">
                 <span class="header-kicker">Astrochemistry &amp; Planet Formation</span>
-                <h1>Rachel Erin Gross</h1>
+                <h1>Rachel Gross</h1>
                 <p class="header-role">ICI Postdoctoral Fellow &nbsp;|&nbsp; University of Virginia</p>
             </div></div>
         </div>
@@ -289,7 +317,7 @@
                             <p class="about-role">ICI Postdoctoral Fellow · Department of Astronomy, University of Virginia</p>
                             <p>
                                 I am an ICI Postdoctoral Fellow at the University of Virginia,
-                                working with Prof. Ilse Cleeves and LASP Director Catherine Dukes.
+                                working with Prof. Ilse Cleeves and Prof. Catherine Dukes.
                                 I received my Ph.D. in Chemistry from UVA in May 2026.
                             </p>
                             <p>
@@ -315,8 +343,9 @@
                     <div class="about-personal">
                         <h3>Beyond research</h3>
                         <p>
-                            Before entering academia, I spent over a decade as a professional equestrian
-                            athlete, focusing on dressage and three-day eventing. Hiking and stuff, trail running, and playing cello
+                            Before entering academia, I spent over a decade as a professional
+                            equestrian athlete, competing in dressage and three-day eventing.
+                            Outside of research, I enjoy hiking, trail running, and playing the cello.
                         </p>
                     </div>
                 </div> <!-- /about-container -->
@@ -414,9 +443,7 @@
                 <!-- MODAL 1: LABORATORY ASTROCHEMISTRY -->
                 <div id="modal-01" class="popup-modal slider mfp-hide">
                     <div class="media">
-                        <div class="research-modal-banner research-lab" aria-hidden="true">
-                            <i class="fa-solid fa-flask-vial"></i>
-                        </div>
+                        <img class="research-modal-image lab-photo" src="images/portfolio/lab_astrochem.jpeg" alt="Photograph of Rachel working with the ultra-high-vacuum chamber">
                     </div>
                     <div class="description-box">
                         <h4>Laboratory Astrochemistry</h4>
@@ -431,9 +458,7 @@
                 <!-- MODAL 2: JWST OBSERVATIONS -->
                 <div id="modal-02" class="popup-modal slider mfp-hide">
                     <div class="media">
-                        <div class="research-modal-banner research-jwst" aria-hidden="true">
-                            <i class="fa-solid fa-satellite"></i>
-                        </div>
+                        <img class="research-modal-image " src="images/portfolio/jwst_obs.jpeg" alt="Four-panel JWST MIRI ice spectrum fitting results">
                     </div>
                     <div class="description-box">
                         <h4>JWST Observations</h4>
@@ -448,9 +473,7 @@
                 <!-- MODAL 3: CHEMICAL MODELING -->
                 <div id="modal-03" class="popup-modal slider mfp-hide">
                     <div class="media">
-                        <div class="research-modal-banner research-chem" aria-hidden="true">
-                            <i class="fa-solid fa-diagram-project"></i>
-                        </div>
+                        <img class="research-modal-image " src="images/portfolio/chemical_modeling.jpeg" alt="Disk chemical model comparison for external UV and binding energies">
                     </div>
                     <div class="description-box">
                         <h4>Chemical Modeling</h4>
@@ -465,9 +488,7 @@
                 <!-- MODAL 4: RADIATIVE TRANSFER -->
                 <div id="modal-04" class="popup-modal slider mfp-hide">
                     <div class="media">
-                        <div class="research-modal-banner research-rt" aria-hidden="true">
-                            <i class="fa-solid fa-wave-square"></i>
-                        </div>
+                        <img class="research-modal-image " src="images/portfolio/radiative_transfer.jpeg" alt="Synthetic edge-on disk images and extracted spectra">
                     </div>
                     <div class="description-box">
                         <h4>Radiative Transfer</h4>
@@ -615,4 +636,3 @@
 </body>
 
 </html>
-
