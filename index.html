@@ -219,7 +219,12 @@
     display: block;
     text-align: center;
 }
-
+.personal-gallery-grid img {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: contain;
+    background: #f7f4f7;
+}
 
   </style>
 </head>
@@ -288,7 +293,7 @@
           <p>For the past two years, I have been learning to play the cello. At home, I am usually tending to my houseplants or propagating yet another pothos. There are quite a few of them at this point.</p>
 
           <!-- Only two small personal photos are visible by default; no visible captions. -->
-          <div class="personal-preview" aria-label="A couple of photographs from outside the lab">
+          
             <figure>
               <a href="images/portfolio/images/personal/dressage_competition.jpeg" target="_blank" rel="noopener noreferrer" title="Open dressage photograph">
                 <img src="images/portfolio/images/personal/dressage_competition.jpeg" alt="Rachel riding in a dressage competition" loading="lazy" decoding="async">
@@ -557,10 +562,14 @@ with JWST</h3>
           </div>
         </div>
         <figure class="feature-media">
-          <a href="images/portfolio/C_CS_HCOP_N2HP_spectra_paper1.jpeg" target="_blank" rel="noopener noreferrer" title="Open molecular line-profile figure full size">
-            <img src="images/portfolio/C_CS_HCOP_N2HP_spectra_paper1.jpeg" alt="Synthetic molecular-line profiles for several gas-phase tracers under different external UV fields" loading="lazy" decoding="async">
+          <a href="images/portfolio/colden_ions.png" target="_blank" rel="noopener noreferrer" title="Open molecular line-profile figure full size">
+            <img src="images/portfolio/colden_ions.png" alt="Synthetic molecular-line profiles for several gas-phase tracers under different external UV fields" loading="lazy" decoding="async">
           </a>
-          <figcaption>Synthetic molecular-line profiles for disks exposed to different external UV fields.</figcaption>
+          <figcaption>
+    Radial column densities of N<sub>2</sub>H<sup>+</sup>,
+    HCO<sup>+</sup>, and C<sup>+</sup> in 50, 100, and
+    200 au disk models under different external UV fields.
+  </figcaption>
         </figure>
       </article>
     </div>
