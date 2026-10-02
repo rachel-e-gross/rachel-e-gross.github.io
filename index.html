@@ -50,7 +50,7 @@
     [id] { scroll-margin-top: 88px; }
     .wrap { width: min(1100px, calc(100% - 48px)); margin-inline: auto; }
     .site-nav { background: rgba(255,255,255,.98); border-bottom: 1px solid var(--line); position: sticky; top: 0; z-index: 40; }
-    .nav-inner { min-height: 62px; display: flex; align-items: center; justify-content: space-between; gap: 26px; }
+    .nav-inner { min-height: 62px; display: flex; align-items: center; justify-content: flex-end; gap: 26px; }
     .brand { font-size: 17px; font-weight: 760; letter-spacing: -.02em; color: var(--ink); text-decoration: none; white-space: nowrap; }
     .nav-links { display: flex; flex-wrap: wrap; align-items: center; gap: 19px; }
     .nav-links a { color: #514954; font: 650 13px/1.4 -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif; text-decoration: none; }
@@ -80,8 +80,7 @@
     /* Portrait and biography stay in the two-column format you liked. */
     .about-grid { display: grid; grid-template-columns: 195px minmax(0, 1fr); gap: 42px; align-items: start; }
     .portrait { width: 195px; height: 195px; object-fit: cover; border-radius: 50%; }
-    .about-copy h3 { margin: 0 0 5px; font-size: 24px; }
-    .about-role { font-size: 14px; line-height: 1.5; color: var(--plum); font-weight: 650; margin-bottom: 20px; }
+    .about-copy .about-heading { margin: 0 0 18px; font-size: clamp(27px, 2.8vw, 33px); letter-spacing: -.03em; }
     .link-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
     .button { text-decoration: none; display: inline-flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid #b29fb7; padding: 9px 13px; color: var(--plum); background: white; font-size: 12px; font-weight: 700; letter-spacing: .015em; line-height: 1.3; }
     .button:hover, .button:focus { background: var(--plum); color: white; border-color: var(--plum); }
@@ -101,7 +100,7 @@
     .personal-preview img { width: 100%; height: 91px; object-fit: cover; }
     .personal-preview figure:first-child img { object-position: center 18%; }
     .personal-preview figure:nth-child(2) img { object-position: center 39%; }
-    .personal-preview figcaption, .personal-gallery-grid figcaption { font: 12px/1.35 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; color: var(--muted); padding-top: 5px; }
+
     .personal-gallery { margin-top: 13px; max-width: 700px; }
     .personal-gallery > summary { display: inline-block; cursor: pointer; color: var(--plum); font: 700 13px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; text-decoration: underline; text-underline-offset: .17em; }
     .personal-gallery > summary:hover, .personal-gallery > summary:focus { color: #915a8e; }
@@ -135,9 +134,6 @@
     .related-papers ul { list-style: none; margin: 0; padding: 0; }
     .related-papers li { margin: 0 0 8px; font-size: 14px; line-height: 1.55; }
     .related-papers a { font-weight: 650; }
-    .research-note { padding: 21px 25px; margin-top: 15px; border-left: 3px solid var(--mauve); background: white; }
-    .research-note h3 { margin: 0 0 9px; font-size: 19px; }
-    .research-note p { margin: 0; font-size: 16px; }
     .group-gap { margin-top: 12px; }
 
     /* Outreach and contact keep the bottom of the homepage compact. */
@@ -149,7 +145,7 @@
     .site-footer .wrap { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 10px; }
 
     @media (max-width: 850px) {
-      .nav-inner { align-items: flex-start; flex-direction: column; padding: 12px 0; gap: 10px; }
+      .nav-inner { align-items: flex-end; flex-direction: column; padding: 12px 0; gap: 10px; }
       .nav-links { gap: 12px 15px; }
       [id] { scroll-margin-top: 120px; }
       .hero { grid-template-columns: minmax(0,1fr) 38%; }
@@ -189,11 +185,10 @@
   <!-- MAIN NAVIGATION -->
   <nav class="site-nav" aria-label="Main navigation">
     <div class="wrap nav-inner">
-      <a class="brand" href="#top">Rachel Gross</a>
+      <!-- Name appears once, in the Keck header below. -->
       <div class="nav-links">
         <a href="#about">About</a>
-        <a href="#current-research">Current Research</a>
-        <a href="#published-research">Published Research</a>
+        <a href="#research">Research</a>
         <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-0477-6047" target="_blank" rel="noopener noreferrer" title="Full publication list on NASA ADS">Publications ↗</a>
         <a href="#outreach">Outreach</a>
         <a href="#contact">Contact</a>
@@ -220,14 +215,11 @@
   <!-- ABOUT: RESEARCH INTEREST AND PERSONAL INTRODUCTION -->
   <section class="section section--white" id="about">
     <div class="wrap">
-      <p class="eyebrow">About</p>
-      <h2 class="section-title">A little about me</h2>
       <div class="about-grid">
         <img class="portrait" src="images/profile_pic.jpeg" alt="Portrait of Rachel Gross">
         <div class="about-copy">
-          <h3>Rachel Gross</h3>
-          <p class="about-role">ICI Postdoctoral Fellow · University of Virginia</p>
-          <p>I work with Prof. Ilse Cleeves and Prof. Catherine Dukes at the University of Virginia, where I received my Ph.D. in Chemistry in May 2026.</p>
+          <h2 class="about-heading">About Me</h2>
+          <p>I am an ICI Postdoctoral Fellow in the Department of Astronomy at the University of Virginia, working with Prof. Ilse Cleeves and Prof. Catherine Dukes. I received my Ph.D. in Chemistry from UVA in May 2026.</p>
           <p>At the center of my research are astrophysical ices: what they contain, how their composition and structure change with their surroundings, and when molecules desorb into the gas as stars and planets form. Gas- and ice-phase chemistry are closely connected, so I also study the molecules in the gas and the disk conditions that shape their distributions.</p>
           <p>I bring together cryogenic laboratory experiments, astronomical spectroscopy, chemical modeling, and radiative transfer. A recurring question across these projects is how to distinguish changes in the underlying chemistry from changes in the way we observe it.</p>
           <div class="link-row" aria-label="Academic links">
@@ -244,19 +236,17 @@
           <p>Before entering academia, I spent over a decade as a professional equestrian athlete, competing in dressage and three-day eventing. Horses are still close to my heart, but I also love traveling and exploring new places&mdash;especially trips that involve hiking, backpacking, glaciers, or finding a beautiful trail for a run.</p>
           <p>For the past two years, I have been learning to play the cello. At home, I am usually tending to my houseplants or propagating yet another pothos. There are quite a few of them at this point.</p>
 
-          <!-- Only two small personal photos are visible by default. -->
+          <!-- Only two small personal photos are visible by default; no visible captions. -->
           <div class="personal-preview" aria-label="A couple of photographs from outside the lab">
             <figure>
               <a href="images/personal/dressage_competition.jpeg" target="_blank" rel="noopener noreferrer" title="Open dressage photograph">
                 <img src="images/personal/dressage_competition.jpeg" alt="Rachel riding in a dressage competition" loading="lazy" decoding="async">
               </a>
-              <figcaption>Dressage</figcaption>
             </figure>
             <figure>
               <a href="images/personal/glacier_portrait.jpeg" target="_blank" rel="noopener noreferrer" title="Open glacier photograph">
                 <img src="images/personal/glacier_portrait.jpeg" alt="Rachel in a red jacket and blue hat beside a glacier" loading="lazy" decoding="async">
               </a>
-              <figcaption>Exploring outdoors</figcaption>
             </figure>
           </div>
 
@@ -266,27 +256,21 @@
             <div class="personal-gallery-grid">
               <figure>
                 <a href="images/personal/equestrian_jumping.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/equestrian_jumping.jpeg" alt="Horse and rider jumping a fence" loading="lazy" decoding="async"></a>
-                <figcaption>Equestrian life</figcaption>
               </figure>
               <figure>
                 <a href="images/personal/glacier_trek.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/glacier_trek.jpeg" alt="Roped hikers traversing a glacier" loading="lazy" decoding="async"></a>
-                <figcaption>Glacier trekking</figcaption>
               </figure>
               <figure>
                 <a href="images/personal/backpacking_bridge.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/backpacking_bridge.jpeg" alt="Rachel crossing a footbridge on a backpacking trip" loading="lazy" decoding="async"></a>
-                <figcaption>Backpacking</figcaption>
               </figure>
               <figure>
                 <a href="images/personal/mountain_camp.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/mountain_camp.jpeg" alt="Tents beneath a mountain and glacier" loading="lazy" decoding="async"></a>
-                <figcaption>Life on the trail</figcaption>
               </figure>
               <figure>
                 <a href="images/personal/coastal_sunset.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/coastal_sunset.jpeg" alt="Orange coastal sunset with silhouetted palm trees" loading="lazy" decoding="async"></a>
-                <figcaption>Travel &amp; photography</figcaption>
               </figure>
               <figure>
                 <a href="images/personal/snowy_mountain.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/snowy_mountain.jpeg" alt="Snow-covered mountain above evergreen forest" loading="lazy" decoding="async"></a>
-                <figcaption>Mountain views</figcaption>
               </figure>
             </div>
           </details>
@@ -296,7 +280,7 @@
   </section>
 
   <!-- CURRENT WORK. THESE ARE NOT PRESENTED AS FINISHED / PUBLISHED RESULTS. -->
-  <section class="section section--soft" id="current-research">
+  <section class="section section--soft" id="research">
     <div class="wrap">
       <div class="section-intro">
         <p class="eyebrow">What I'm working on</p>
@@ -312,7 +296,7 @@
           <p>I generate synthetic images and spectra of edge-on disks exposed to different external UV fields and compare the recovered H<sub>2</sub>O, CO<sub>2</sub>, and CO ice signatures with the model's physical abundances. I am also extending this work toward Orion silhouette-disk geometries, where nebular background light passes through the disk and provides a different view of its ice.</p>
         </div>
         <figure class="feature-media">
-          <a href="images/portfolio/images/personal/radtran_compare_apertures_G1_G100.png" target="_blank" rel="noopener noreferrer" title="Open figure full size">
+          <a href="images/portfolio/radiative_transfer_apertures.jpeg" target="_blank" rel="noopener noreferrer" title="Open figure full size">
             <img src="images/portfolio/radiative_transfer_apertures.jpeg" alt="Synthetic edge-on disk continuum image with aperture locations and extracted spectra" loading="lazy" decoding="async">
           </a>
           <figcaption>Synthetic images and extracted ice spectra for an edge-on disk.</figcaption>
@@ -334,7 +318,6 @@
         </figure>
       </article>
 
-    
     </div>
   </section>
 
@@ -358,7 +341,7 @@
           </div>
         </div>
         <figure class="feature-media">
-          <a href="images/portfolio/TPDs.jpeg" target="_blank" rel="noopener noreferrer" title="Open methyl formate desorption figure full size">
+          <a href="images/portfolio/mf_desorption_data.jpeg" target="_blank" rel="noopener noreferrer" title="Open methyl formate desorption figure full size">
             <img src="images/portfolio/mf_desorption_data.jpeg" alt="Methyl formate temperature-programmed desorption data for different water- and methanol-ice substrates" loading="lazy" decoding="async">
           </a>
           <figcaption>Methyl formate desorption from different astrophysical ice analogues.</figcaption>
@@ -402,7 +385,7 @@
           </div>
         </div>
         <figure class="feature-media">
-          <a href="images/portfolio/images/personal/C_CS_HCOP_N2HP_spectra_paper1.jpeg" target="_blank" rel="noopener noreferrer" title="Open molecular line-profile figure full size">
+          <a href="images/portfolio/chemical_model_line_profiles.jpeg" target="_blank" rel="noopener noreferrer" title="Open molecular line-profile figure full size">
             <img src="images/portfolio/chemical_model_line_profiles.jpeg" alt="Synthetic molecular-line profiles for several gas-phase tracers under different external UV fields" loading="lazy" decoding="async">
           </a>
           <figcaption>Synthetic molecular-line profiles for disks exposed to different external UV fields.</figcaption>
