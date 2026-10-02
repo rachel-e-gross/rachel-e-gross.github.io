@@ -91,6 +91,30 @@
     .personal h3 { color: var(--plum); font-size: 17px; margin: 3px 0; }
     .personal p { margin: 0; }
 
+
+    /* A restrained personal photo strip. No JavaScript or full-time image grid. */
+    .personal-content { min-width: 0; }
+    .personal-content p + p { margin-top: 10px; }
+    .personal-preview { display: flex; gap: 12px; align-items: start; margin: 16px 0 0; }
+    .personal-preview figure { width: 140px; max-width: calc(50% - 6px); margin: 0; }
+    .personal-preview a, .personal-gallery-grid a { display: block; overflow: hidden; background: #eee9ed; border: 1px solid var(--line); }
+    .personal-preview img { width: 100%; height: 91px; object-fit: cover; }
+    .personal-preview figure:first-child img { object-position: center 18%; }
+    .personal-preview figure:nth-child(2) img { object-position: center 39%; }
+    .personal-preview figcaption, .personal-gallery-grid figcaption { font: 12px/1.35 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; color: var(--muted); padding-top: 5px; }
+    .personal-gallery { margin-top: 13px; max-width: 700px; }
+    .personal-gallery > summary { display: inline-block; cursor: pointer; color: var(--plum); font: 700 13px/1.5 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; text-decoration: underline; text-underline-offset: .17em; }
+    .personal-gallery > summary:hover, .personal-gallery > summary:focus { color: #915a8e; }
+    .personal-gallery > summary span { display: inline-block; margin-left: 2px; transition: transform .16s ease; }
+    .personal-gallery[open] > summary span { transform: rotate(90deg); }
+    .personal-gallery-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-top: 16px; }
+    .personal-gallery-grid figure { margin: 0; min-width: 0; }
+    .personal-gallery-grid img { width: 100%; aspect-ratio: 4/3; object-fit: cover; }
+    .outreach-columns { display: grid; grid-template-columns: minmax(0, 1.45fr) minmax(260px, .75fr); align-items: start; gap: 38px; }
+    .outreach-columns h3 { color: var(--ink); font-size: 21px; margin: 0 0 12px; }
+    .outreach-media { border-left: 3px solid #cfb6cc; padding-left: 22px; }
+    .outreach-media .button { margin-top: 6px; }
+
     /* Research is now visible content, not thumbnail cards or modal windows. */
     .feature { display: grid; grid-template-columns: minmax(0, 1.06fr) minmax(0, .94fr); align-items: start; gap: 38px; padding: 36px 0; border-top: 1px solid var(--line); }
     .feature--reverse { grid-template-columns: minmax(0, .94fr) minmax(0, 1.06fr); }
@@ -106,17 +130,17 @@
     .feature-media img.photo { max-height: 360px; aspect-ratio: 4 / 3; object-fit: cover; }
     .feature-media figcaption { color: var(--muted); font-size: 12px; line-height: 1.5; margin-top: 9px; }
     .feature-media figcaption a { font-size: inherit; }
+    .related-papers { margin-top: 19px; padding-top: 14px; border-top: 1px solid var(--line); }
+    .related-papers h4 { font-size: 15px; color: var(--plum); margin: 0 0 8px; }
+    .related-papers ul { list-style: none; margin: 0; padding: 0; }
+    .related-papers li { margin: 0 0 8px; font-size: 14px; line-height: 1.55; }
+    .related-papers a { font-weight: 650; }
     .research-note { padding: 21px 25px; margin-top: 15px; border-left: 3px solid var(--mauve); background: white; }
     .research-note h3 { margin: 0 0 9px; font-size: 19px; }
     .research-note p { margin: 0; font-size: 16px; }
     .group-gap { margin-top: 12px; }
 
-    /* Publications, outreach and contact keep the bottom of the homepage compact. */
-    .pub-list { list-style: none; padding: 0; margin: 0 0 20px; }
-    .pub-list li { margin: 0; padding: 14px 0; border-top: 1px solid var(--line); }
-    .pub-list li:last-child { border-bottom: 1px solid var(--line); }
-    .pub-year { display: inline-block; min-width: 53px; color: var(--plum); font: 750 13px/1.4 -apple-system,BlinkMacSystemFont,'Segoe UI',Arial,sans-serif; }
-    .pub-list a { font-weight: bold; }
+    /* Outreach and contact keep the bottom of the homepage compact. */
     .outreach-row { display: grid; grid-template-columns: 1fr auto; gap: 30px; align-items: center; }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; }
     .contact-grid h3 { font-size: 17px; margin: 0 0 8px; }
@@ -133,6 +157,7 @@
       .about-grid { grid-template-columns: 155px minmax(0,1fr); gap: 24px; }
       .portrait { width: 155px; height: 155px; }
       .personal { grid-template-columns: 155px minmax(0,1fr); gap: 24px; }
+      .outreach-columns { grid-template-columns: minmax(0,1fr); gap: 22px; }
       .feature, .feature--reverse { grid-template-columns: minmax(0,1fr); gap: 18px; }
       .feature--reverse .feature-text, .feature--reverse .feature-media { order: initial; }
       .feature-media { max-width: 680px; }
@@ -147,6 +172,10 @@
       .about-grid { display: block; }
       .portrait { width: 150px; height: 150px; margin-bottom: 18px; }
       .personal { grid-template-columns: 1fr; gap: 10px; margin-top: 24px; }
+      .personal-preview figure { width: 125px; }
+      .personal-preview img { height: 86px; }
+      .personal-gallery-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 11px; }
+      .outreach-media { padding-left: 16px; }
       .outreach-row, .contact-grid { grid-template-columns: 1fr; gap: 14px; }
       .feature { padding: 27px 0; }
       .feature h3 { font-size: 23px; }
@@ -165,7 +194,7 @@
         <a href="#about">About</a>
         <a href="#current-research">Current Research</a>
         <a href="#published-research">Published Research</a>
-        <a href="#publications">Publications</a>
+        <a href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-0477-6047" target="_blank" rel="noopener noreferrer" title="Full publication list on NASA ADS">Publications ↗</a>
         <a href="#outreach">Outreach</a>
         <a href="#contact">Contact</a>
         <a class="nav-cv" href="CV_RG_updated.pdf" target="_blank" rel="noopener noreferrer">CV ↗</a>
@@ -211,7 +240,57 @@
       </div>
       <div class="personal">
         <h3>Beyond research</h3>
-        <p>Before entering academia, I spent over a decade as a professional equestrian athlete, competing in dressage and three-day eventing. Outside of research, I enjoy hiking, trail running, and playing the cello.</p>
+        <div class="personal-content">
+          <p>Before entering academia, I spent over a decade as a professional equestrian athlete, competing in dressage and three-day eventing. Horses are still close to my heart, but I also love traveling and exploring new places&mdash;especially trips that involve hiking, backpacking, glaciers, or finding a beautiful trail for a run.</p>
+          <p>For the past two years, I have been learning to play the cello. At home, I am usually tending to my houseplants or propagating yet another pothos. There are quite a few of them at this point.</p>
+
+          <!-- Only two small personal photos are visible by default. -->
+          <div class="personal-preview" aria-label="A couple of photographs from outside the lab">
+            <figure>
+              <a href="images/personal/dressage_competition.jpeg" target="_blank" rel="noopener noreferrer" title="Open dressage photograph">
+                <img src="images/personal/dressage_competition.jpeg" alt="Rachel riding in a dressage competition" loading="lazy" decoding="async">
+              </a>
+              <figcaption>Dressage</figcaption>
+            </figure>
+            <figure>
+              <a href="images/personal/glacier_portrait.jpeg" target="_blank" rel="noopener noreferrer" title="Open glacier photograph">
+                <img src="images/personal/glacier_portrait.jpeg" alt="Rachel in a red jacket and blue hat beside a glacier" loading="lazy" decoding="async">
+              </a>
+              <figcaption>Exploring outdoors</figcaption>
+            </figure>
+          </div>
+
+          <!-- The remaining images expand only when the visitor requests them. -->
+          <details class="personal-gallery">
+            <summary>More photos from outside the lab <span aria-hidden="true">&#x279C;</span></summary>
+            <div class="personal-gallery-grid">
+              <figure>
+                <a href="images/personal/equestrian_jumping.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/equestrian_jumping.jpeg" alt="Horse and rider jumping a fence" loading="lazy" decoding="async"></a>
+                <figcaption>Equestrian life</figcaption>
+              </figure>
+              <figure>
+                <a href="images/personal/glacier_trek.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/glacier_trek.jpeg" alt="Roped hikers traversing a glacier" loading="lazy" decoding="async"></a>
+                <figcaption>Glacier trekking</figcaption>
+              </figure>
+              <figure>
+                <a href="images/personal/backpacking_bridge.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/backpacking_bridge.jpeg" alt="Rachel crossing a footbridge on a backpacking trip" loading="lazy" decoding="async"></a>
+                <figcaption>Backpacking</figcaption>
+              </figure>
+              <figure>
+                <a href="images/personal/mountain_camp.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/mountain_camp.jpeg" alt="Tents beneath a mountain and glacier" loading="lazy" decoding="async"></a>
+                <figcaption>Life on the trail</figcaption>
+              </figure>
+              <figure>
+                <a href="images/personal/coastal_sunset.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/coastal_sunset.jpeg" alt="Orange coastal sunset with silhouetted palm trees" loading="lazy" decoding="async"></a>
+                <figcaption>Travel &amp; photography</figcaption>
+              </figure>
+              <figure>
+                <a href="images/personal/snowy_mountain.jpeg" target="_blank" rel="noopener noreferrer"><img src="images/personal/snowy_mountain.jpeg" alt="Snow-covered mountain above evergreen forest" loading="lazy" decoding="async"></a>
+                <figcaption>Mountain views</figcaption>
+              </figure>
+            </div>
+          </details>
+        </div>
       </div>
     </div>
   </section>
@@ -231,15 +310,12 @@
           <h3>When does disk ice leave an observable signature?</h3>
           <p>A chemical model tells us where molecules are in a disk, but a telescope measures light, not the underlying molecular inventory. The observable ice bands depend on geometry, scattering, optical depth, and which part of the disk contributes to an extracted spectrum.</p>
           <p>I generate synthetic images and spectra of edge-on disks exposed to different external UV fields and compare the recovered H<sub>2</sub>O, CO<sub>2</sub>, and CO ice signatures with the model's physical abundances. I am also extending this work toward Orion silhouette-disk geometries, where nebular background light passes through the disk and provides a different view of its ice.</p>
-          <div class="feature-cta">
-            <a class="button" href="images/portfolio/radiative_transfer_ice_ratio_maps.jpeg" target="_blank" rel="noopener noreferrer">View additional ice-ratio maps ↗</a>
-          </div>
         </div>
         <figure class="feature-media">
           <a href="images/portfolio/radiative_transfer_apertures.jpeg" target="_blank" rel="noopener noreferrer" title="Open figure full size">
             <img src="images/portfolio/radiative_transfer_apertures.jpeg" alt="Synthetic edge-on disk continuum image with aperture locations and extracted spectra" loading="lazy" decoding="async">
           </a>
-          <figcaption>Synthetic observations extracted from different regions of an edge-on disk. Click the figure to enlarge it.</figcaption>
+          <figcaption>Synthetic images and extracted ice spectra for an edge-on disk.</figcaption>
         </figure>
       </article>
 
@@ -254,7 +330,7 @@
           <a href="images/portfolio/uhv_chamber_closeup.jpeg" target="_blank" rel="noopener noreferrer" title="Open chamber photo full size">
             <img class="photo" src="images/portfolio/uhv_chamber_closeup.jpeg" alt="Close-up photograph of the cryogenic ultra-high-vacuum ice chamber" loading="lazy" decoding="async">
           </a>
-          <figcaption>UVA's cryogenic ice chamber. <a href="images/portfolio/lab_chamber_cad.jpeg" target="_blank" rel="noopener noreferrer">View the instrument CAD diagram ↗</a></figcaption>
+          <figcaption>UVA's cryogenic ice chamber.</figcaption>
         </figure>
       </article>
 
@@ -301,12 +377,19 @@
           <div class="feature-cta">
             <a class="button button--solid" href="https://doi.org/10.3847/1538-4357/ae2c81" target="_blank" rel="noopener noreferrer">Read CORINOS IV ↗</a>
           </div>
+          <div class="related-papers">
+            <h4>Related CORINOS research</h4>
+            <ul>
+              <li><a href="https://doi.org/10.3847/1538-4357/ae66e7" target="_blank" rel="noopener noreferrer">Thompson et al. (2026) — CORINOS V: Radiative-transfer effects in protostellar ice observations ↗</a></li>
+              <li><a href="https://arxiv.org/abs/2602.05383" target="_blank" rel="noopener noreferrer">Turner et al. (2026) — A chemistry-first ice inventory of protostellar sources with JWST ↗</a></li>
+            </ul>
+          </div>
         </div>
         <figure class="feature-media">
           <a href="images/portfolio/jwst_obs.jpeg" target="_blank" rel="noopener noreferrer" title="Open JWST spectral-fitting figure full size">
             <img src="images/portfolio/jwst_obs.jpeg" alt="Four panels showing laboratory-component fits to JWST MIRI ice absorption spectra" loading="lazy" decoding="async">
           </a>
-          <figcaption>Laboratory-component fits to JWST/MIRI absorption spectra. <a href="images/portfolio/jwst_h2_emission_maps.jpeg" target="_blank" rel="noopener noreferrer">View an additional JWST figure ↗</a></figcaption>
+          <figcaption>Laboratory-component fits to JWST/MIRI absorption spectra.</figcaption>
         </figure>
       </article>
 
@@ -314,8 +397,9 @@
         <div class="feature-text">
           <span class="feature-status">Chemical modeling · 2025</span>
           <h3>What changes when a disk forms near massive stars?</h3>
-          <p>Protoplanetary disks often form in clustered environments, where nearby stars expose them to external ultraviolet radiation. I modeled the response of gas- and ice-phase chemistry to moderate external UV fields across disks with different physical structures, examining tracers including N<sub>2</sub>H<sup>+</sup>, HCO<sup>+</sup>, C, and CS.</p>
-          <p>Coupling those chemical models to synthetic molecular-line calculations showed how external irradiation can alter observable gas-phase tracers, particularly in more exposed disk regions. This work also motivates my continued investigation of the connection between molecular binding energies, volatile partitioning, and observable chemistry.</p>
+          <p>Not all planet-forming disks experience the extreme irradiation found near the centers of massive clusters. To examine the more common, moderately irradiated environments, I modeled T Tauri disks under external UV fields from 1 to 100 times the typical interstellar field, varying their outer disk structure and predicting synthetic molecular-line emission.</p>
+          <p><strong>The key result is that the response is both molecule- and location-dependent.</strong> External UV creates an ionization front and changes the chemistry of the outer disk, with C<sup>+</sup>, N<sub>2</sub>H<sup>+</sup>, atomic C, and CS responding more strongly than CO and HCO<sup>+</sup> in these models. More extended, less-shielded disks show a larger response, while the chemistry within roughly the inner 25 au remains comparatively unchanged.</p>
+          <p>These differences help identify molecular tracers of a disk's birth environment without assuming that external irradiation alters the chemistry of the entire disk uniformly.</p>
           <div class="feature-cta">
             <a class="button button--solid" href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980..189G/abstract" target="_blank" rel="noopener noreferrer">Read the disk chemistry paper ↗</a>
           </div>
@@ -324,39 +408,29 @@
           <a href="images/portfolio/chemical_model_line_profiles.jpeg" target="_blank" rel="noopener noreferrer" title="Open molecular line-profile figure full size">
             <img src="images/portfolio/chemical_model_line_profiles.jpeg" alt="Synthetic molecular-line profiles for several gas-phase tracers under different external UV fields" loading="lazy" decoding="async">
           </a>
-          <figcaption>Example synthetic line profiles across modeled external UV fields. <a href="images/portfolio/chemical_model_hcn_cn.jpeg" target="_blank" rel="noopener noreferrer">View HCN/CN model maps ↗</a></figcaption>
+          <figcaption>Synthetic molecular-line profiles for disks exposed to different external UV fields.</figcaption>
         </figure>
       </article>
     </div>
   </section>
 
-  <!-- SHORT PUBLICATION LIST, WITH A LINK TO THE FULL ADS RECORD -->
-  <section class="section section--soft" id="publications">
+  <!-- OUTREACH AND MEDIA: PHOTOGRAPHS CAN BE ADDED LATER, WHEN AVAILABLE AND APPROVED -->
+  <section class="section section--soft" id="outreach">
     <div class="wrap">
-      <p class="eyebrow">Research output</p>
-      <h2 class="section-title">Selected Publications</h2>
-      <ul class="pub-list">
-        <li><span class="pub-year">2026</span> <strong>Gross, R. E.</strong> et al., <a href="https://arxiv.org/abs/2609.27031" target="_blank" rel="noopener noreferrer">Laboratory Evidence that Methanol-Rich Ice Mantles Lower Methyl Formate Binding Energies</a> (accepted; arXiv:2609.27031).</li>
-        <li><span class="pub-year">2026</span> <strong>Gross, R. E.</strong> et al., <a href="https://doi.org/10.3847/1538-4357/ae2c81" target="_blank" rel="noopener noreferrer">CORINOS IV: Quantifying Baseline-fitting Uncertainties in SO<sub>2</sub> Ice Measurements with JWST/MIRI</a> (ApJ).</li>
-        <li><span class="pub-year">2025</span> <strong>Gross, R. E.</strong> &amp; Cleeves, L. I., <a href="https://ui.adsabs.harvard.edu/abs/2025ApJ...980..189G/abstract" target="_blank" rel="noopener noreferrer">Modeling the Impact of Moderate External UV Irradiation on Disk Chemistry</a> (ApJ, 980, 189).</li>
-      </ul>
-      <div class="link-row">
-        <a class="button button--solid" href="https://ui.adsabs.harvard.edu/search/q=orcid%3A0000-0002-0477-6047" target="_blank" rel="noopener noreferrer">Full publication list on ADS ↗</a>
-        <a class="button" href="CV_RG_updated.pdf" target="_blank" rel="noopener noreferrer">Download CV ↗</a>
+      <p class="eyebrow">Science communication</p>
+      <h2 class="section-title">Outreach &amp; Media</h2>
+      <div class="outreach-columns">
+        <div>
+          <h3>Hands-on astronomy</h3>
+          <p>I enjoy sharing astronomy through hands-on experiences. At UVA, I have participated in <em>Girls Exploring the Universe</em> (2022, 2024, and 2025) and <em>Go Explore the Universe</em> (2026). I helped develop and prepare activities based on NASA's <a href="https://radiojove.gsfc.nasa.gov/" target="_blank" rel="noopener noreferrer">Radio JOVE</a> project for the 2025 and 2026 programs, introducing students to radio astronomy.</p>
+          <p>I also coordinate and lead tours of our astrochemistry laboratory for university classes and visiting Starhill students, and participate in <em>Dark Skies, Bright Kids</em>.</p>
+        </div>
+        <aside class="outreach-media">
+          <h3>Astrochem Coffee</h3>
+          <p>I joined the <em>Single-Origin Brew</em> segment of the January 2025 <em>Astrochem Coffee</em> podcast to discuss my published work on external UV irradiation and protoplanetary disk chemistry.</p>
+          <a class="button button--solid" href="https://shows.acast.com/astrochem-coffee/episodes/january-2025-its-a-sulfurous-universe-man" target="_blank" rel="noopener noreferrer">Listen to the episode ↗</a>
+        </aside>
       </div>
-    </div>
-  </section>
-
-  <!-- SCIENCE COMMUNICATION -->
-  <section class="section section--white" id="outreach">
-    <div class="wrap outreach-row">
-      <div>
-        <p class="eyebrow">Science communication</p>
-        <h2 class="section-title">Outreach &amp; Media</h2>
-        <p>I joined the <em>Single-Origin Brew</em> segment of the January 2025 <em>Astrochem Coffee</em> podcast to discuss my work on external UV irradiation and protoplanetary disk chemistry.</p>
-        <p>I also participate in hands-on astronomy outreach, including laboratory tours and educational activities such as Radio JOVE.</p>
-      </div>
-      <a class="button button--solid" href="https://shows.acast.com/astrochem-coffee/episodes/january-2025-its-a-sulfurous-universe-man" target="_blank" rel="noopener noreferrer">Listen to the episode ↗</a>
     </div>
   </section>
 
